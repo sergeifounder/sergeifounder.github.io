@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sergei Krushinskikh — Strategic Ecosystem Plan 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --surface2: #1a1a1a;
+    --border: rgba(255,255,255,0.06);
+    --mint: #2dd4a0;
+    --mint-dim: rgba(45,212,160,0.15);
+    --cyan: #22d3ee;
+    --purple: #a78bfa;
+    --orange: #fb923c;
+    --red: #f87171;
+    --yellow: #fbbf24;
+    --blue: #60a5fa;
+    --pink: #f472b6;
+    --text: #ffffff;
+    --text2: #8c8c8c;
+    --text3: #595959;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(45,212,160,0.05), rgba(34,211,238,0.03));
+    border: 1px solid var(--border);
+    border-radius: 24px;
+  }
+  .header h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--mint), var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header .subtitle {
+    font-size: 1.1rem;
+    color: var(--text2);
+    font-weight: 300;
+  }
+  .header .date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text3);
+    margin-top: 12px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 48px;
+  }
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--bg);
+    background: var(--mint);
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  /* ECOSYSTEM MAP */
+  .ecosystem {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    position: relative;
+  }
+
+  .eco-center {
+    background: linear-gradient(135deg, rgba(45,212,160,0.12), rgba(34,211,238,0.08));
+    border: 2px solid var(--mint);
+    border-radius: 20px;
+    padding: 32px;
+    text-align: center;
+    margin: 0 auto 40px;
+    max-width: 500px;
+    position: relative;
+  }
+  .eco-center h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .eco-center .role {
+    color: var(--mint);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .eco-center .desc {
+    color: var(--text2);
+    font-size: 0.85rem;
+    margin-top: 8px;
+  }
+
+  .eco-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .eco-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .eco-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.12);
+  }
+  .eco-card .priority {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 8px;
+  }
+  .eco-card .priority.p1 { background: var(--mint); color: var(--bg); }
+  .eco-card .priority.p2 { background: var(--cyan); color: var(--bg); }
+  .eco-card .priority.p3 { background: var(--purple); color: white; }
+  .eco-card .priority.p4 { background: var(--text3); color: white; }
+
+  .eco-card h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .eco-card .type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text3);
+    margin-bottom: 10px;
+  }
+  .eco-card .desc {
+    font-size: 0.8rem;
+    color: var(--text2);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .eco-card .feeds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .eco-card .feeds .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: var(--mint-dim);
+    color: var(--mint);
+  }
+  .eco-card .metric {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.8rem;
+  }
+  .eco-card .metric:last-child { border: none; }
+  .eco-card .metric .val {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    color: var(--mint);
+  }
+
+  /* FLOW DIAGRAM */
+  .flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+    padding: 24px;
+    background: var(--surface);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+  }
+  .flow-node {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 18px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    min-width: 140px;
+  }
+  .flow-node.highlight {
+    border-color: var(--mint);
+    background: var(--mint-dim);
+    color: var(--mint);
+  }
+  .flow-arrow {
+    color: var(--text3);
+    font-size: 1.2rem;
+  }
+
+  /* POSITIONING TABLE */
+  .pos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  .pos-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .pos-card h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pos-card .field {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+  }
+  .pos-card .field .label {
+    color: var(--text3);
+    min-width: 70px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+  }
+  .pos-card .field .value {
+    color: var(--text2);
+  }
+
+  /* ROADMAP */
+  .roadmap {
+    position: relative;
+    padding-left: 40px;
+  }
+  .roadmap::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--mint), var(--cyan), var(--purple), var(--orange));
+  }
+  .rm-phase {
+    position: relative;
+    margin-bottom: 32px;
+    padding-left: 24px;
+  }
+  .rm-phase::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 3px solid var(--mint);
+    background: var(--bg);
+  }
+  .rm-phase.phase-2::before { border-color: var(--cyan); }
+  .rm-phase.phase-3::before { border-color: var(--purple); }
+  .rm-phase.phase-4::before { border-color: var(--orange); }
+  .rm-phase.phase-5::before { border-color: var(--yellow); }
+
+  .rm-phase .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .rm-phase .phase-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 6px;
+  }
+  .rm-phase .phase-label.l1 { background: var(--mint); color: var(--bg); }
+  .rm-phase .phase-label.l2 { background: var(--cyan); color: var(--bg); }
+  .rm-phase .phase-label.l3 { background: var(--purple); color: white; }
+  .rm-phase .phase-label.l4 { background: var(--orange); color: var(--bg); }
+  .rm-phase .phase-label.l5 { background: var(--yellow); color: var(--bg); }
+
+  .rm-phase h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  .rm-phase .days {
+    color: var(--text3);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+  }
+
+  .task-list {
+    list-style: none;
+    margin-top: 12px;
+  }
+  .task-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    color: var(--text2);
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+  .task-list li .check {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--text3);
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .task-list li.done .check {
+    background: var(--mint);
+    border-color: var(--mint);
+  }
+  .task-list li .project-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .tag-geo { background: rgba(45,212,160,0.15); color: var(--mint); }
+  .tag-brand { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .tag-indogig { background: rgba(251,146,60,0.15); color: var(--orange); }
+  .tag-clients { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .tag-content { background: rgba(244,114,182,0.15); color: var(--pink); }
+
+  /* METRICS */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+  .metric-card .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--mint);
+  }
+  .metric-card .label {
+    font-size: 0.72rem;
+    color: var(--text3);
+    margin-top: 4px;
+  }
+  .metric-card .target {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text2);
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* CRITIQUE */
+  .critique {
+    background: rgba(248,113,113,0.05);
+    border: 1px solid rgba(248,113,113,0.2);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .critique h3 {
+    color: var(--red);
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  .critique ul {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--text2);
+  }
+  .critique ul li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(248,113,113,0.1);
+    display: flex;
+    gap: 8px;
+  }
+  .critique ul li::before {
+    content: '⚠';
+    flex-shrink: 0;
+  }
+
+  .strength {
+    background: rgba(45,212,160,0.05);
+    border: 1px solid rgba(45,212,160,0.2);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .strength h3 {
+    color: var(--mint);
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  .strength ul {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--text2);
+  }
+  .strength ul li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(45,212,160,0.1);
+    display: flex;
+    gap: 8px;
+  }
+  .strength ul li::before {
+    content: '✓';
+    color: var(--mint);
+    flex-shrink: 0;
+  }
+
+  /* REGISTER LIST */
+  .register-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
+  }
+  .register-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.82rem;
+  }
+  .register-item .icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+  .register-item .status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .status-done { background: rgba(45,212,160,0.15); color: var(--mint); }
+  .status-todo { background: rgba(251,146,60,0.15); color: var(--orange); }
+  .status-new { background: rgba(96,165,250,0.15); color: var(--blue); }
+
+  @media (max-width: 768px) {
+    .header h1 { font-size: 1.8rem; }
+    body { padding: 20px 12px; }
+    .flow { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Strategic Ecosystem Plan</h1>
+  <div class="subtitle">Sergei Krushinskikh — Founder, Builder, Bali</div>
+  <div class="date">June 5, 2026 · Day 1 = June 6 (Friday) · Launch Day = June 17 (Tuesday)</div>
+</div>
+
+<!-- ========================================== -->
+<!-- 1. ECOSYSTEM MAP -->
+<!-- ========================================== -->
+<div class="section">
+  <div class="section-title"><span class="num">01</span> Ecosystem — How Everything Connects</div>
+
+  <!-- Center: Sergei -->
+  <div class="eco-center">
+    <h3>Sergei Krushinskikh</h3>
+    <div class="role">FOUNDER & TECH ARCHITECT</div>
+    <div class="desc">sergeifounder.com · LinkedIn · Twitter · GitHub</div>
+    <div style="margin-top:12px;font-size:0.75rem;color:var(--text3);">
+      "I build tools for the AI-first web and staff the hospitality industry in Bali"
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="eco-grid">
+
+    <!-- IndoGig -->
+    <div class="eco-card">
+      <div class="priority p1">PRIORITY #1 — 60%</div>
+      <h4>🏨 IndoGig</h4>
+      <div class="type">MAIN BUSINESS · PT INDOGIG · Bali, Indonesia</div>
+      <div class="desc">WhatsApp-first staffing platform for Bali hospitality. 3 clients, 40 workers, WhatsApp MVP 60% built. TAM $178B global.</div>
+      <div class="metric"><span>Status</span><span class="val">Building MVP</span></div>
+      <div class="metric"><span>MRR</span><span class="val">$0 → $2.1K (Q4)</span></div>
+      <div class="metric"><span>Timeline</span><span class="val">3-5 weeks to launch</span></div>
+      <div class="metric"><span>Kill criteria</span><span class="val">60 days, &lt;5 requests</span></div>
+      <div style="margin-top:12px">
+        <div class="feeds">
+          <span class="tag">revenue-primary</span>
+          <span class="tag">VC-backable</span>
+          <span class="tag">moat: worker graph</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- geoseo.today -->
+    <div class="eco-card">
+      <div class="priority p2">PRIORITY #2 — 25%</div>
+      <h4>🔬 geoseo.today</h4>
+      <div class="type">TOOL + SaaS · Open Source · MIT License</div>
+      <div class="desc">SEO + GEO audit engine. 135+ checks, evidence-based. Open source on GitHub + hosted SaaS $29/mo. Authority builder + client acquisition tool.</div>
+      <div class="metric"><span>Status</span><span class="val">Product ready, pre-launch</span></div>
+      <div class="metric"><span>MRR target</span><span class="val">$0 → $290 (30 days)</span></div>
+      <div class="metric"><span>GitHub stars target</span><span class="val">300-1000</span></div>
+      <div class="metric"><span>Role</span><span class="val">Authority + Revenue</span></div>
+      <div style="margin-top:12px">
+        <div class="feeds">
+          <span class="tag">feeds → clients</span>
+          <span class="tag">feeds → personal brand</span>
+          <span class="tag">monitors → all sites</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client Work -->
+    <div class="eco-card">
+      <div class="priority p3">PRIORITY #3 — 15%</div>
+      <h4>🎨 Web Dev + SEO/GEO Services</h4>
+      <div class="type">FULL-CYCLE: WEBSITE → SEO → GEO → SUPPORT · Cash Flow</div>
+      <div class="desc">Full service: build websites + optimize for Google & AI search + monthly support. Ross Painting (San Diego), SynergyPro (Bali), mom's site. geoseo.today = live demo of expertise → attracts new clients.</div>
+      <div class="metric"><span>Active clients</span><span class="val">2-3</span></div>
+      <div class="metric"><span>Services</span><span class="val">Site build + SEO + GEO</span></div>
+      <div class="metric"><span>Price</span><span class="val">$500-2000 build + $300-500/mo</span></div>
+      <div class="metric"><span>Lead source</span><span class="val">geoseo.today → "fix it for me"</span></div>
+      <div style="margin-top:12px">
+        <div class="feeds">
+          <span class="tag">cash flow</span>
+          <span class="tag">case studies → geoseo</span>
+          <span class="tag">geoseo = lead magnet</span>
+          <span class="tag">portfolio → sergeifounder.com</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Personal Brand -->
+    <div class="eco-card">
+      <div class="priority p4">SUPPORT</div>
+      <h4>👤 sergeifounder.com</h4>
+      <div class="type">PERSONAL BRAND · Portfolio · Authority</div>
+      <div class="desc">Landing page: who I am, what I build, links to IndoGig + geoseo + GitHub. One-page portfolio with social proof.</div>
+      <div class="metric"><span>Current state</span><span class="val">Needs creation</span></div>
+      <div class="metric"><span>Purpose</span><span class="val">Trust + discovery</span></div>
+      <div style="margin-top:12px">
+        <div class="feeds">
+          <span class="tag">LinkedIn → here</span>
+          <span class="tag">GitHub → here</span>
+          <span class="tag">HN bio → here</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ContentDecode -->
+    <div class="eco-card" style="opacity:0.75">
+      <div class="priority p4">VALIDATE · 2 hours total</div>
+      <h4>📊 ContentDecode</h4>
+      <div class="type">MINIMAL VALIDATION · Desktop App · IG Analytics</div>
+      <div class="desc">Technically ready, 0 paying customers. One demo video → 10 channels → wait 7 days. If 0 interest = kill. If 5+ "want to try" = continue.</div>
+      <div class="metric"><span>Status</span><span class="val">VALIDATE (Day 15-22)</span></div>
+      <div class="metric"><span>Time budget</span><span class="val">MAX 2 hours total</span></div>
+      <div class="metric"><span>Kill criteria</span><span class="val">0 responses in 7 days = dead</span></div>
+      <div style="margin-top:12px">
+        <div class="feeds">
+          <span class="tag">1 video → 10 channels</span>
+          <span class="tag">validate or kill</span>
+          <span class="tag">site monitored by geoseo</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FLOW: How geoseo feeds everything -->
+<div class="section">
+  <div class="section-title"><span class="num">02</span> Revenue Machine — How geoseo.today Feeds Everything</div>
+
+  <div class="flow">
+    <div class="flow-node highlight">geoseo.today<br><small>free audit</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">Visitor sees<br><small>score 45/100</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node highlight">3 paths</div>
+  </div>
+
+  <div class="eco-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="eco-card">
+      <h4 style="color:var(--mint)">Path A: Self-serve</h4>
+      <div class="desc">User fixes issues themselves using AI recommendations. Upgrades to Pro ($29/mo) for monitoring.</div>
+      <div class="metric"><span>Revenue</span><span class="val">$29/mo SaaS</span></div>
+    </div>
+    <div class="eco-card">
+      <h4 style="color:var(--cyan)">Path B: "Fix it for me"</h4>
+      <div class="desc">User sees problems, doesn't know how to fix → hires Sergei for SEO/GEO services.</div>
+      <div class="metric"><span>Revenue</span><span class="val">$300-500/mo</span></div>
+    </div>
+    <div class="eco-card">
+      <h4 style="color:var(--purple)">Path C: GitHub star</h4>
+      <div class="desc">Developer discovers on GitHub → stars → builds authority → Sergei gets consulting leads.</div>
+      <div class="metric"><span>Revenue</span><span class="val">$200-500/hr consulting</span></div>
+    </div>
+  </div>
+
+  <div class="flow" style="margin-top:20px">
+    <div class="flow-node">geoseo monitors<br><small>6 own sites</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">weekly reports<br><small>auto-generated</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node highlight">Sergei fixes<br><small>SEO/GEO issues</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node">scores improve<br><small>case studies</small></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-node highlight">content for<br><small>Twitter/blog</small></div>
+  </div>
+
+  <div style="text-align:center;margin-top:16px;font-size:0.8rem;color:var(--text3);">
+    Sites monitored: indogig.com · geoseo.today · contentdecode.co · rosspainting.com · synergypro · lubov-krushinskikh.ru
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- 3. POSITIONING -->
+<!-- ========================================== -->
+<div class="section">
+  <div class="section-title"><span class="num">03</span> Positioning — Social Profiles & Messaging</div>
+
+  <div class="pos-grid">
+
+    <div class="pos-card">
+      <h4>💼 LinkedIn</h4>
+      <div class="field"><span class="label">Headline</span><span class="value">Founder @ IndoGig (Bali staffing) · Building geoseo.today (open-source GEO audit) · Python/FastAPI</span></div>
+      <div class="field"><span class="label">About</span><span class="value">I build two things: IndoGig — WhatsApp-first staffing for Bali hospitality. And geoseo.today — open-source tool that helps websites survive AI search. Both powered by Python, both free to try.</span></div>
+      <div class="field"><span class="label">Featured</span><span class="value">1) geoseo.today link 2) GitHub repo 3) IndoGig site</span></div>
+      <div class="field"><span class="label">Focus</span><span class="value">IndoGig = main, geoseo = authority, both mentioned equally</span></div>
+    </div>
+
+    <div class="pos-card">
+      <h4>🐦 Twitter/X (personal)</h4>
+      <div class="field"><span class="label">Handle</span><span class="value">@sergeifounder</span></div>
+      <div class="field"><span class="label">Bio</span><span class="value">Building @IndoGigHQ (Bali staffing) + @geoseo_today (open-source GEO audit). Founder. Python. Bali 🌴</span></div>
+      <div class="field"><span class="label">Content</span><span class="value">Build-in-public: both projects. 70% geoseo (data, insights), 30% IndoGig (Bali life, staffing)</span></div>
+    </div>
+
+    <div class="pos-card">
+      <h4>🔬 Twitter/X (product)</h4>
+      <div class="field"><span class="label">Handle</span><span class="value">@geoseo_today</span></div>
+      <div class="field"><span class="label">Bio</span><span class="value">Open-source SEO + GEO audit. 135+ checks. Princeton research. Free forever.</span></div>
+      <div class="field"><span class="label">Content</span><span class="value">100% product: research facts, tips, case studies, changelog</span></div>
+    </div>
+
+    <div class="pos-card">
+      <h4>🐙 GitHub</h4>
+      <div class="field"><span class="label">Username</span><span class="value">sergeifounder</span></div>
+      <div class="field"><span class="label">Bio</span><span class="value">Founder. Building open-source tools for the AI-first web. Bali 🌴</span></div>
+      <div class="field"><span class="label">Pinned</span><span class="value">geoseo-today (main), indogig-whatsapp (when ready)</span></div>
+    </div>
+
+    <div class="pos-card">
+      <h4>🌐 sergeifounder.com</h4>
+      <div class="field"><span class="label">Type</span><span class="value">One-page portfolio. Dark theme. Minimal.</span></div>
+      <div class="field"><span class="label">Sections</span><span class="value">Hero → Projects (IndoGig + geoseo) → Open Source → Contact</span></div>
+      <div class="field"><span class="label">Stack</span><span class="value">Static HTML on GitHub Pages. 30 min to build.</span></div>
+    </div>
+
+    <div class="pos-card">
+      <h4>🇷🇺 vc.ru / Habr</h4>
+      <div class="field"><span class="label">Profile</span><span class="value">Сергей Крушинских — разработчик, Бали. Строю open-source инструменты.</span></div>
+      <div class="field"><span class="label">Content</span><span class="value">Технические статьи про geoseo, GEO-аудит, Яндекс Нейро</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- 4. WHAT TO REGISTER -->
+<!-- ========================================== -->
+<div class="section">
+  <div class="section-title"><span class="num">04</span> Accounts & Assets to Register</div>
+
+  <div class="register-grid">
+    <div class="register-item"><span class="icon">🐙</span><span>GitHub: sergeifounder</span><span class="status status-done">EXISTS</span></div>
+    <div class="register-item"><span class="icon">🐙</span><span>GitHub repo: geoseo-today</span><span class="status status-todo">CREATE</span></div>
+    <div class="register-item"><span class="icon">🐦</span><span>Twitter: @geoseo_today</span><span class="status status-new">REGISTER</span></div>
+    <div class="register-item"><span class="icon">🐦</span><span>Twitter: @sergeifounder</span><span class="status status-new">REGISTER</span></div>
+    <div class="register-item"><span class="icon">💼</span><span>LinkedIn: update profile</span><span class="status status-todo">UPDATE</span></div>
+    <div class="register-item"><span class="icon">🏹</span><span>Product Hunt: maker profile</span><span class="status status-new">REGISTER</span></div>
+    <div class="register-item"><span class="icon">📝</span><span>dev.to account</span><span class="status status-new">REGISTER</span></div>
+    <div class="register-item"><span class="icon">🌐</span><span>sergeifounder.com (GitHub Pages)</span><span class="status status-new">CREATE</span></div>
+    <div class="register-item"><span class="icon">💳</span><span>Stripe account (PT INDOGIG)</span><span class="status status-todo">SETUP</span></div>
+    <div class="register-item"><span class="icon">🔐</span><span>Supabase project</span><span class="status status-new">CREATE</span></div>
+    <div class="register-item"><span class="icon">💳</span><span>ЮKassa (ИП) — for RU later</span><span class="status status-todo">LATER</span></div>
+    <div class="register-item"><span class="icon">🇷🇺</span><span>vc.ru author profile</span><span class="status status-new">REGISTER</span></div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- 5. CRITIQUE -->
+<!-- ========================================== -->
+<div class="section">
+  <div class="section-title"><span class="num">05</span> Plan Critique — Risks & Strengths</div>
+
+  <div class="eco-grid" style="grid-template-columns: 1fr 1fr;">
+    <div class="critique">
+      <h3>Risks & Weaknesses</h3>
+      <ul>
+        <li>2 дня на SaaS обёртку — tight. Auth + Dashboard + Stripe = может растянуться на 3-4 дня. Fallback: запустить GitHub без SaaS, добавить позже</li>
+        <li>0 аудитории = первые дни на HN/Reddit могут не выстрелить. Plan B: micro-launches в Telegram + vc.ru, повторить HN через 2 недели</li>
+        <li>IndoGig откладывается пока делаем geoseo. Mitigation: geoseo launch = 1 неделя, потом 100% IndoGig</li>
+        <li>Builder trap: после launch захочется "ещё пофиксить" вместо продаж. Rule: после Day 11 — STOP building, START selling</li>
+        <li>Нет тестов (у конкурентов 500-1300). Для launch не блокер, но для credibility нужны</li>
+        <li>Docker-compose может не работать у всех — нужен fallback на pip install</li>
+        <li>Supabase free tier = 500MB DB, 50K auth requests. Хватит на старт, но планировать миграцию</li>
+      </ul>
+    </div>
+
+    <div class="strength">
+      <h3>Strengths & Advantages</h3>
+      <ul>
+        <li>Продукт ГОТОВ — не MVP, а полноценный рабочий инструмент с 135+ checks</li>
+        <li>Evidence-based methodology — уникально, ни у кого нет source rating A/B/C/D</li>
+        <li>Web UI + site crawl — единственный open-source с полным аудитом в браузере</li>
+        <li>"Now What" gap закрыт — 58 fix-записей + Gemini AI рекомендации</li>
+        <li>Dogfooding — используешь сам для 6 сайтов = лучший фидбэк</li>
+        <li>Бали + IndoGig story = уникальный personal brand angle</li>
+        <li>"Alternative to $500/mo tools" — доказанный вирусный hook</li>
+        <li>12 языков UI уже готово</li>
+        <li>PDF/Excel экспорт для agency work</li>
+        <li>geoseo → client acquisition → cash flow → IndoGig development. Flywheel.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- 6. METRICS TARGETS -->
+<!-- ========================================== -->
+<div class="section">
+  <div class="section-title"><span class="num">06</span> Metrics — 30-Day Targets</div>
+
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="value">300</div>
+      <div class="label">GitHub Stars</div>
+      <div class="target">stretch: 1000</div>
+    </div>
+    <div class="metric-card">
+      <div class="value">500</div>
+      <div class="label">Audits Run</div>
+      <div class="target">stretch: 2000</div>
+    </div>
+    <div class="metric-card">
+      <div class="value">100</div>
+      <div class="label">Email Subscribers</div>
+      <div class="target">stretch: 500</div>
+    </div>
+    <div class="metric-card">
+      <div class="value">50</div>
+      <div class="label">Registered Users</div>
+      <div class="target">stretch: 200</div>
+    </div>
+    <div class="metric-card">
+      <div class="value">3</div>
+      <div class="label">Paying Customers</div>
+      <div class="target">$87 MRR</div>
+    </div>
+    <div class="metric-card">
+      <div class="value">200</div>
+      <div class="label">Twitter Followers</div>
+      <div class="target">@geoseo_today</div>
+    </div>
+    <div class="metric-card">
+      <div class="value">2</div>
+      <div class="label">Client Reports Sent</div>
+      <div class="target">Ross + SynergyPro</div>
+    </div>
+    <div class="metric-card">
+      <div class="value">6</div>
+      <div class="label">Own Sites Monitored</div>
+      <div class="target">auto-scan weekly</div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px">
+    <div class="section-title" style="font-size:1.1rem;"><span class="num">90D</span> 90-Day Targets (P50 realistic)</div>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="value">500</div>
+        <div class="label">GitHub Stars</div>
+        <div class="target">stretch: 1K</div>
+      </div>
+      <div class="metric-card">
+        <div class="value">$200</div>
+        <div class="label">MRR (geoseo)</div>
+        <div class="target">stretch: $500</div>
+      </div>
+      <div class="metric-card">
+        <div class="value">$0</div>
+        <div class="label">MRR (IndoGig)</div>
+        <div class="target">MVP launched, validating</div>
+      </div>
+      <div class="metric-card">
+        <div class="value">$800</div>
+        <div class="label">Client Revenue</div>
+        <div class="target">Ross + 1 new client</div>
+      </div>
+      <div class="metric-card" style="border-color:var(--mint);">
+        <div class="value" style="font-size:1.5rem;">$1K</div>
+        <div class="label">Total Monthly Revenue</div>
+        <div class="target">P50 realistic · stretch: $2K</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- 6.5 CONTENTDECODE VALIDATION -->
+<!-- ========================================== -->
+<div class="section">
+  <div class="section-title"><span class="num">6.5</span> ContentDecode — Minimal Validation (2 hours max)</div>
+
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:24px;">
+    <h3 style="font-size:1rem;margin-bottom:16px;">Plan: 1 video → 10 channels → 7 days wait → decide</h3>
+    <div class="eco-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div style="text-align:center;padding:16px;">
+        <div style="font-size:2rem;">📹</div>
+        <div style="font-size:0.85rem;font-weight:600;margin:8px 0;">Day 15</div>
+        <div style="font-size:0.75rem;color:var(--text2);">Record 2-min screen demo:<br>"Here's what ContentDecode does"<br><strong>30 min</strong></div>
+      </div>
+      <div style="text-align:center;padding:16px;">
+        <div style="font-size:2rem;">📢</div>
+        <div style="font-size:0.85rem;font-weight:600;margin:8px 0;">Day 15-16</div>
+        <div style="font-size:0.75rem;color:var(--text2);">Post to 10 channels below<br>Short text + video link<br><strong>30 min</strong></div>
+      </div>
+      <div style="text-align:center;padding:16px;">
+        <div style="font-size:2rem;">📊</div>
+        <div style="font-size:0.85rem;font-weight:600;margin:8px 0;">Day 22</div>
+        <div style="font-size:0.75rem;color:var(--text2);">Check results:<br>5+ "want to try" → continue<br>0 responses → <strong>KILL</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <h4 style="font-size:0.95rem;margin-bottom:16px;">Channels to Post (10 total)</h4>
+
+  <div class="eco-grid" style="grid-template-columns: 1fr 1fr;">
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;">
+      <h4 style="font-size:0.9rem;color:var(--cyan);margin-bottom:12px;">🌍 English (6 channels)</h4>
+      <div style="font-size:0.8rem;color:var(--text2);">
+        <div style="padding:6px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;">
+          <span><strong>Reddit r/InstagramMarketing</strong> (180K+)</span>
+          <span style="color:var(--text3)">text post</span>
+        </div>
+        <div style="padding:6px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;">
+          <span><strong>Reddit r/socialmedia</strong> (400K+)</span>
+          <span style="color:var(--text3)">text post</span>
+        </div>
+        <div style="padding:6px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;">
+          <span><strong>Reddit r/SideProject</strong> (200K+)</span>
+          <span style="color:var(--text3)">text post</span>
+        </div>
+        <div style="padding:6px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;">
+          <span><strong>Product Hunt</strong> (short launch)</span>
+          <span style="color:var(--text3)">product page</span>
+        </div>
+        <div style="padding:6px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;">
+          <span><strong>Facebook: IG Marketing Groups</strong></span>
+          <span style="color:var(--text3)">video post</span>
+        </div>
+        <div style="padding:6px 0;display:flex;justify-content:space-between;">
+          <span><strong>IndieHackers</strong></span>
+          <span style="color:var(--text3)">product post</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;">
+      <h4 style="font-size:0.9rem;color:var(--purple);margin-bottom:12px;">🇷🇺 Russian (4 channels)</h4>
+      <div style="font-size:0.8rem;color:var(--text2);">
+        <div style="padding:6px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;">
+          <span><strong>vc.ru</strong> (short post in "Маркетинг")</span>
+          <span style="color:var(--text3)">статья</span>
+        </div>
+        <div style="padding:6px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;">
+          <span><strong>Telegram: SMM чаты</strong></span>
+          <span style="color:var(--text3)">видео + текст</span>
+        </div>
+        <div style="padding:6px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;">
+          <span><strong>Telegram: Инстаграм маркетинг</strong></span>
+          <span style="color:var(--text3)">видео + текст</span>
+        </div>
+        <div style="padding:6px 0;display:flex;justify-content:space-between;">
+          <span><strong>Telegram: SaaS / Стартапы РФ</strong></span>
+          <span style="color:var(--text3)">видео + текст</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:20px;background:rgba(251,146,60,0.05);border:1px solid rgba(251,146,60,0.2);border-radius:12px;padding:16px;">
+    <h4 style="color:var(--orange);font-size:0.85rem;margin-bottom:8px;">Post Template (copy-paste)</h4>
+    <div style="font-size:0.78rem;color:var(--text2);line-height:1.6;">
+      <strong>English:</strong> "I built a desktop app that analyzes Instagram profiles — hooks, posting patterns, content strategy. You paste a profile URL, it breaks down what makes them grow. Free to try. Would love feedback from creators/marketers. [video link]"<br><br>
+      <strong>Russian:</strong> "Сделал приложение которое анализирует Instagram-профили — хуки, паттерны постинга, стратегию контента. Вставляешь URL профиля, получаешь разбор что работает. Бесплатно. Буду рад фидбэку. [ссылка на видео]"
+    </div>
+  </div>
+
+  <div style="margin-top:16px;background:rgba(248,113,113,0.05);border:1px solid rgba(248,113,113,0.15);border-radius:12px;padding:16px;">
+    <h4 style="color:var(--red);font-size:0.85rem;margin-bottom:8px;">HARD RULE</h4>
+    <div style="font-size:0.78rem;color:var(--text2);">
+      Budget: MAX 2 hours. No new features. No code changes. No automation. Just 1 video + 10 posts + wait.<br>
+      If 0 interest → ContentDecode officially dead. Move domain to redirect → geoseo.today.
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- 7. ROADMAP -->
+<!-- ========================================== -->
+<div class="section">
+  <div class="section-title"><span class="num">07</span> Roadmap — 30 Days, Task by Task</div>
+
+  <div class="roadmap">
+
+    <!-- PHASE 1A -->
+    <div class="rm-phase">
+      <div class="phase-header">
+        <span class="phase-label l1">PHASE 1A</span>
+        <h3>GitHub Ready — Code + README + Publish</h3>
+        <span class="days">Days 1-2 · June 6-7 (Fri-Sat)</span>
+      </div>
+      <ul class="task-list">
+        <li><span class="check"></span><span class="project-tag tag-geo">GEOSEO</span>Убрать секреты из кода (Telegram token, API keys)</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">GEOSEO</span>Создать .env.example + расширить .gitignore</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">GEOSEO</span>Добавить MIT LICENSE</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">GEOSEO</span>Написать README.md (hook + GIF + quick start + features + methodology)</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">GEOSEO</span>Написать CONTRIBUTING.md + issue templates</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">GEOSEO</span>Записать GIF демо (15-20 сек)</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">GEOSEO</span>Создать docker-compose.yml</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">GEOSEO</span>Создать OG image для GitHub</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">GEOSEO</span>Smoke test на чистой машине</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">GEOSEO</span>Опубликовать на GitHub</li>
+      </ul>
+    </div>
+
+    <!-- PHASE 1B -->
+    <div class="rm-phase">
+      <div class="phase-header">
+        <span class="phase-label l1">PHASE 1B</span>
+        <h3>SaaS Обёртка — Auth + Dashboard + Stripe</h3>
+        <span class="days">Days 3-4 · June 8-9 (Sun-Mon)</span>
+      </div>
+      <ul class="task-list">
+        <li><span class="check"></span><span class="project-tag tag-geo">SAAS</span>Supabase: проект + таблицы (projects, audits, score_history, alerts, subscriptions)</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SAAS</span>DB abstraction: SQLite (GitHub) / Supabase (SaaS)</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SAAS</span>Supabase Auth (Google login)</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SAAS</span>Dashboard "мои проекты"</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SAAS</span>Score history + мини-график</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SAAS</span>Stripe Checkout (Free=1 сайт, Pro $29=10 сайтов)</li>
+      </ul>
+      <div style="margin-top:8px;padding:8px 12px;background:rgba(96,165,250,0.08);border:1px solid rgba(96,165,250,0.15);border-radius:8px;font-size:0.75rem;color:var(--blue);">
+        Параллельно (в свободные 30 мин): оформить GitHub profile, зарегать Twitter @geoseo_today + @sergeifounder, обновить LinkedIn, зарегать Product Hunt, dev.to
+      </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="rm-phase phase-2">
+      <div class="phase-header">
+        <span class="phase-label l2">PHASE 2</span>
+        <h3>Правки сайта + контент подготовка</h3>
+        <span class="days">Days 5-6 · June 10-11 (Tue-Wed)</span>
+      </div>
+      <ul class="task-list">
+        <li><span class="check"></span><span class="project-tag tag-geo">SITE</span>Добавить "Open Source" badge + "Star on GitHub" кнопку на landing</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SITE</span>Обновить "50+ checks" → "135+ checks" на landing</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SITE</span>Добавить research source в каждую GEO-карточку отчёта</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SITE</span>Переставить AI Recommendations выше в отчёте</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SITE</span>Добавить "Share this report" кнопку</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SITE</span>Добавить Pro CTA блок внизу отчёта ("Coming Soon")</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SITE</span>OG tags (Twitter Card, OpenGraph) для красивого шеринга</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SITE</span>XML sitemap + robots.txt (allow GPTBot, ClaudeBot)</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SITE</span>Проверить /methodology страница live</li>
+        <li><span class="check"></span><span class="project-tag tag-content">CONTENT</span>Записать 60-сек Loom "why I built this"</li>
+        <li><span class="check"></span><span class="project-tag tag-content">CONTENT</span>Сделать 5 скриншотов (landing, report, GEO, PDF, dashboard)</li>
+        <li><span class="check"></span><span class="project-tag tag-content">CONTENT</span>Написать HN "Show HN" пост + first comment</li>
+        <li><span class="check"></span><span class="project-tag tag-content">CONTENT</span>Написать Reddit пост (r/opensource, r/webdev, r/SEO)</li>
+        <li><span class="check"></span><span class="project-tag tag-content">CONTENT</span>Написать Twitter launch thread (8-10 tweets)</li>
+        <li><span class="check"></span><span class="project-tag tag-content">CONTENT</span>Написать dev.to статью</li>
+        <li><span class="check"></span><span class="project-tag tag-content">CONTENT</span>Написать vc.ru статью</li>
+        <li><span class="check"></span><span class="project-tag tag-content">CONTENT</span>Подготовить Product Hunt page (скриншоты, tagline, description)</li>
+        <li><span class="check"></span><span class="project-tag tag-content">CONTENT</span>Собрать 10 email/twitter исследователей для DM</li>
+      </ul>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="rm-phase phase-2">
+      <div class="phase-header">
+        <span class="phase-label l2">PHASE 3</span>
+        <h3>Launch Week</h3>
+        <span class="days">Days 7-13 · June 12-18 (Thu→Wed) · LAUNCH = June 17 Tue</span>
+      </div>
+      <ul class="task-list">
+        <li><span class="check"></span><span class="project-tag tag-geo">SOFT</span>Day 5 (Mon): Telegram SEO чаты + DM исследователям</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">LAUNCH</span>Day 6 (Tue): Hacker News "Show HN" (8am ET)</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">LAUNCH</span>Day 6: Reddit r/opensource + r/webdev + r/SEO</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">LAUNCH</span>Day 6: Twitter launch thread</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">LAUNCH</span>Day 6: Отвечать на ВСЕ комментарии весь день</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">WAVE2</span>Day 7 (Wed): Product Hunt (00:01 PST)</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">WAVE2</span>Day 7: dev.to + LinkedIn + vc.ru публикация</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">WAVE2</span>Day 7: Submit to TLDR, Console.dev, Python Weekly</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SUSTAIN</span>Days 8-11: Merge PRs, answer issues, "Day X results" tweets</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SUSTAIN</span>Day 9: Reddit r/SaaS "I launched on HN, here's what happened"</li>
+      </ul>
+    </div>
+
+    <!-- PHASE 4 -->
+    <div class="rm-phase phase-3">
+      <div class="phase-header">
+        <span class="phase-label l3">PHASE 4</span>
+        <h3>SaaS + Agency Features + CD Validation</h3>
+        <span class="days">Days 14-22 · June 19-27</span>
+      </div>
+      <ul class="task-list">
+        <li><span class="check"></span><span class="project-tag tag-geo">SAAS</span>Cron worker для weekly auto-scan</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SAAS</span>Telegram alert bot (скор изменился)</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SAAS</span>Stripe go live + 14-day free trial</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SAAS</span>Guest link (read-only отчёт для клиента)</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">SAAS</span>Branded PDF (загрузить свой логотип)</li>
+        <li><span class="check"></span><span class="project-tag tag-clients">CLIENT</span>Добавить 6 своих сайтов на мониторинг</li>
+        <li><span class="check"></span><span class="project-tag tag-clients">CLIENT</span>Первый отчёт Ross Painting → показать результат</li>
+        <li><span class="check"></span><span class="project-tag tag-content">CONTENT</span>Weekly tweets: research facts, tips, before/after</li>
+        <li><span class="check"></span><span class="project-tag tag-content">CONTENT</span>dev.to: "5 GEO myths debunked by data"</li>
+        <li style="border-color:rgba(244,114,182,0.3);"><span class="check"></span><span class="project-tag tag-content" style="background:rgba(244,114,182,0.15);color:var(--pink);">CD TEST</span>Day 15: Записать 2-мин demo ContentDecode (30 мин)</li>
+        <li style="border-color:rgba(244,114,182,0.3);"><span class="check"></span><span class="project-tag tag-content" style="background:rgba(244,114,182,0.15);color:var(--pink);">CD TEST</span>Day 15-16: Запостить в 10 каналов (30 мин)</li>
+        <li style="border-color:rgba(244,114,182,0.3);"><span class="check"></span><span class="project-tag tag-content" style="background:rgba(244,114,182,0.15);color:var(--pink);">CD TEST</span>Day 22: Проверить результат → CONTINUE или KILL</li>
+      </ul>
+    </div>
+
+    <!-- PHASE 5 -->
+    <div class="rm-phase phase-4">
+      <div class="phase-header">
+        <span class="phase-label l4">PHASE 5</span>
+        <h3>IndoGig MVP Full Speed</h3>
+        <span class="days">Days 23-28 · June 28 - July 3</span>
+      </div>
+      <ul class="task-list">
+        <li><span class="check"></span><span class="project-tag tag-indogig">INDOGIG</span>100% фокус на IndoGig WhatsApp MVP</li>
+        <li><span class="check"></span><span class="project-tag tag-indogig">INDOGIG</span>Backend + WhatsApp бот + Supabase</li>
+        <li><span class="check"></span><span class="project-tag tag-indogig">INDOGIG</span>Meta Business верификация</li>
+        <li><span class="check"></span><span class="project-tag tag-indogig">INDOGIG</span>Web views (дашборд, чекин, кандидаты)</li>
+        <li><span class="check"></span><span class="project-tag tag-geo">GEOSEO</span>geoseo на автопилоте: 30 мин/день (issues, community)</li>
+        <li style="border-color:rgba(96,165,250,0.2);"><span class="check"></span><span class="project-tag tag-geo" style="background:rgba(96,165,250,0.1);color:var(--blue);">LATER</span>РФ рынок (ЮKassa, Yandex Neuro) → только если launch показал спрос из РФ</li>
+      </ul>
+    </div>
+
+    <!-- PHASE 6 -->
+    <div class="rm-phase phase-5">
+      <div class="phase-header">
+        <span class="phase-label l5">PHASE 6</span>
+        <h3>Retro + Month 2 Planning</h3>
+        <span class="days">Days 29-30 · July 4-5</span>
+      </div>
+      <ul class="task-list">
+        <li><span class="check"></span><span class="project-tag tag-content">CONTENT</span>Case study: "GEO score X→Y for Ross Painting"</li>
+        <li><span class="check"></span><span class="project-tag tag-indogig">INDOGIG</span>IndoGig: деплой + тест + FB ads запуск</li>
+        <li><span class="check"></span><span class="project-tag tag-brand">RETRO</span>Day 30: Ретро — что сработало, что нет</li>
+        <li><span class="check"></span><span class="project-tag tag-brand">RETRO</span>Решение по ContentDecode (continue/kill)</li>
+        <li><span class="check"></span><span class="project-tag tag-brand">RETRO</span>Решение по РФ рынку (есть спрос → ЮKassa, нет → пропустить)</li>
+        <li><span class="check"></span><span class="project-tag tag-brand">RETRO</span>План на месяц 2: приоритеты, метрики</li>
+      </ul>
+      <div style="margin-top:8px;padding:10px 12px;background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.2);border-radius:8px;font-size:0.75rem;color:var(--red);font-weight:600;">
+        HARD RULE: Days 14+ — НЕ добавлять фичи в geoseo. Только community, content, selling. Builder trap = enemy #1.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center;padding:40px 0;color:var(--text3);font-size:0.75rem;font-family:'JetBrains Mono',monospace;">
+  Generated June 5, 2026 · Sergei Krushinskikh · geoseo.today
+</div>
+
+</body>
+</html>

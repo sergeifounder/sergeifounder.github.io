@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO Глубокий Гид — Как AI выбирает кого цитировать</title>
+<meta name="robots" content="noindex">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  :root { --bg:#0a0a0a; --surface:#141414; --border:rgba(255,255,255,0.06); --mint:#2dd4a0; --cyan:#22d3ee; --purple:#a78bfa; --orange:#fb923c; --red:#f87171; --yellow:#fbbf24; --blue:#60a5fa; --text:#fff; --text2:#8c8c8c; --text3:#595959; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.7; padding:20px; max-width:800px; margin:0 auto; font-size:15px; }
+  h1 { font-size:1.6rem; font-weight:900; margin-bottom:4px; background:linear-gradient(135deg,var(--mint),var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  h2 { font-size:1.15rem; font-weight:800; margin:36px 0 14px; padding-top:20px; border-top:1px solid var(--border); }
+  h3 { font-size:0.95rem; font-weight:700; margin:20px 0 8px; color:var(--cyan); }
+  p, li { font-size:0.84rem; color:var(--text2); margin-bottom:10px; }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px; margin-bottom:16px; }
+  .hl { background:rgba(45,212,160,0.08); border:1px solid rgba(45,212,160,0.2); border-radius:12px; padding:16px; margin:16px 0; }
+  .warn { background:rgba(248,113,113,0.08); border:1px solid rgba(248,113,113,0.2); border-radius:12px; padding:16px; margin:16px 0; }
+  .example { background:rgba(96,165,250,0.06); border:1px solid rgba(96,165,250,0.15); border-radius:10px; padding:14px; margin:12px 0; font-size:0.82rem; }
+  .example .label { font-family:'JetBrains Mono',monospace; font-size:0.65rem; color:var(--blue); margin-bottom:6px; text-transform:uppercase; }
+  .vs { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0; }
+  .vs > div { padding:14px; border-radius:10px; font-size:0.8rem; }
+  .vs .bad { background:rgba(248,113,113,0.06); border:1px solid rgba(248,113,113,0.15); }
+  .vs .good { background:rgba(45,212,160,0.06); border:1px solid rgba(45,212,160,0.15); }
+  .vs .bad .label { color:var(--red); }
+  .vs .good .label { color:var(--mint); }
+  .nav { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
+  .nav a { color:var(--mint); text-decoration:none; background:rgba(45,212,160,0.1); padding:6px 12px; border-radius:8px; font-size:0.72rem; font-weight:600; }
+  table { width:100%; border-collapse:collapse; font-size:0.8rem; margin:12px 0; }
+  th { text-align:left; padding:8px; color:var(--text3); font-family:'JetBrains Mono',monospace; font-size:0.68rem; border-bottom:1px solid var(--border); }
+  td { padding:8px; color:var(--text2); border-bottom:1px solid var(--border); }
+  a { color:var(--mint); }
+  ul { padding-left:20px; }
+  .tag { font-family:'JetBrains Mono',monospace; font-size:0.6rem; padding:2px 8px; border-radius:4px; }
+  .strat { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px; margin:10px 0; }
+  .strat h4 { font-size:0.88rem; font-weight:700; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+  .strat ul { margin:0; padding-left:18px; }
+  .strat li { font-size:0.8rem; padding:3px 0; }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="/plan.html">План</a>
+  <a href="/geo-guide.html">GEO Гид (кратко)</a>
+  <a href="/geo-deep.html" style="background:var(--mint);color:var(--bg);">Глубокий GEO Гид</a>
+</div>
+
+<h1>Как AI решает кого цитировать</h1>
+<p style="color:var(--text3);font-size:0.78rem;">Детально, с примерами для Ross Painting, IndoGig, ContentDecode, geoseo.today</p>
+
+<!-- ==================== -->
+<h2>1. Как AI выбирает кого показать вместо конкурента</h2>
+
+<div class="card">
+<p style="color:var(--text);">Когда пользователь спрашивает ChatGPT <em>"best house painters in San Diego"</em>, вот что происходит:</p>
+
+<p><strong>Шаг 1: Retrieval</strong> — AI ищет в индексе 50-200 страниц по теме. Это работает как Google — SEO ранг важен.</p>
+<p><strong>Шаг 2: Evaluation</strong> — из 200 страниц AI оставляет 15-30. Оценивает: можно ли из этой страницы извлечь чёткий ответ?</p>
+<p><strong>Шаг 3: Citation</strong> — из 30 оставляет 3-5 источников. Цитирует тех, у кого: сильный бренд + структурированный контент + свежие данные.</p>
+
+<p style="color:var(--mint);font-weight:600;margin-top:12px;">85% страниц отбрасываются на шаге 2-3. Вопрос: почему AI выберет Ross Painting а не конкурента?</p>
+</div>
+
+<div class="example">
+<div class="label">Пример: "best painters in La Jolla"</div>
+<p style="color:var(--text);">ChatGPT находит 5 сайтов маляров. Вот как он решает:</p>
+<table>
+<tr><th>Сигнал</th><th>Ross Painting</th><th>Конкурент A</th><th>Кто побеждает</th></tr>
+<tr><td>YouTube видео</td><td style="color:var(--mint)">Есть канал</td><td style="color:var(--red)">Нет</td><td style="color:var(--mint)">Ross</td></tr>
+<tr><td>Google отзывы</td><td style="color:var(--mint)">17 отзывов, 5.0</td><td>42 отзыва, 4.8</td><td style="color:var(--orange)">Конкурент (больше)</td></tr>
+<tr><td>FAQ с цифрами</td><td style="color:var(--mint)">Есть ("$3,500-$8,000")</td><td style="color:var(--red)">Нет</td><td style="color:var(--mint)">Ross</td></tr>
+<tr><td>Структура H1→H2→H3</td><td style="color:var(--orange)">H1→H3 skip</td><td style="color:var(--mint)">Правильная</td><td style="color:var(--orange)">Конкурент</td></tr>
+<tr><td>Schema JSON-LD</td><td style="color:var(--mint)">PaintingContractor+FAQ</td><td style="color:var(--red)">Нет schema</td><td style="color:var(--mint)">Ross</td></tr>
+<tr><td>Yelp профиль</td><td style="color:var(--mint)">Активный</td><td style="color:var(--mint)">Активный</td><td>Ничья</td></tr>
+</table>
+<p style="margin-top:8px;"><strong>Итог:</strong> Ross побеждает 4:2. Но если конкурент починит структуру и добавит FAQ — может обойти. <strong>Heading skip в H1→H3 реально мешает</strong> — AI хуже парсит контент.</p>
+</div>
+
+<!-- ==================== -->
+<h2>2. Что значит "упоминания бренда" (r=0.664)</h2>
+
+<div class="card">
+<p style="color:var(--text);">Ahrefs проанализировал 146 миллионов выдач и 75,000 брендов. Результат: <strong>чем чаще бренд упоминается в интернете (не на своём сайте!) — тем чаще AI его цитирует.</strong></p>
+
+<p>Корреляция r=0.664 — это в <strong>3 раза сильнее чем бэклинки</strong> (r=0.218).</p>
+</div>
+
+<div class="example">
+<div class="label">Что считается "упоминанием бренда"</div>
+<p style="color:var(--text);">Любое место где написано "Ross Painting Group" НЕ на rosspaintinggroup.com:</p>
+<ul>
+<li><strong>Google Business Profile</strong> — "Ross Painting Group, 5.0 stars, San Diego"</li>
+<li><strong>Yelp</strong> — "Ross Painting Group — Best Painters in SD"</li>
+<li><strong>Reddit</strong> — кто-то написал "I used Ross Painting for my house, great job"</li>
+<li><strong>YouTube</strong> — название канала, описания видео, комментарии</li>
+<li><strong>LinkedIn</strong> — страница компании, посты сотрудников</li>
+<li><strong>Houzz / Angi / HomeAdvisor</strong> — профили в каталогах</li>
+<li><strong>Новостные сайты</strong> — статья "Top 10 Painters in San Diego" с упоминанием</li>
+<li><strong>BBB (Better Business Bureau)</strong> — аккредитованный профиль</li>
+</ul>
+<p style="color:var(--mint);">Чем на большем количестве сайтов упоминается бренд — тем увереннее AI что этот бренд реальный и авторитетный.</p>
+</div>
+
+<div class="example">
+<div class="label">Для IndoGig — что делать</div>
+<ul>
+<li>Профиль на <strong>DailySocial</strong>, <strong>Tech in Asia</strong> — региональные IT медиа</li>
+<li>Упоминание на <strong>Kompas</strong>, <strong>Detik</strong> — индонезийские новости</li>
+<li><strong>Google Business</strong> — профиль PT INDOGIG в Бали</li>
+<li><strong>LinkedIn</strong> — страница компании + пост от Sergei о стаффинге</li>
+<li><strong>Glassdoor / JobStreet</strong> — профиль работодателя</li>
+</ul>
+</div>
+
+<!-- ==================== -->
+<h2>3. YouTube — почему #1 и что считывает AI</h2>
+
+<div class="card">
+<p style="color:var(--text);">YouTube = самый сильный сигнал для AI-видимости (r=0.737). Сильнее чем бэклинки, бренд-запросы, и даже контент на сайте.</p>
+<p><strong>Что AI считывает с YouTube:</strong></p>
+<ul>
+<li><strong>Название канала</strong> — "Ross Painting Group" = бренд-сигнал</li>
+<li><strong>Заголовки видео</strong> — "How to Choose a House Painter in San Diego" = тематическая релевантность</li>
+<li><strong>Описания</strong> — текст с ключевыми словами, ссылкой на сайт</li>
+<li><strong>Транскрипция</strong> — AI транскрибирует аудио и индексирует текст</li>
+<li><strong>Количество видео</strong> — больше = сильнее сигнал, но даже 1 видео уже работает</li>
+<li><strong>Просмотры и лайки</strong> — косвенный сигнал доверия, но не главный</li>
+</ul>
+</div>
+
+<div class="vs">
+<div class="bad">
+<div class="label" style="font-weight:700;">0 видео на YouTube</div>
+<p>AI не находит бренд на YouTube. Нет транскрипции. Нет бренд-сигнала с крупнейшей видеоплатформы. Серьёзный минус.</p>
+</div>
+<div class="good">
+<div class="label" style="font-weight:700;">3-5 видео</div>
+<p>AI видит: канал существует, бренд упоминается, есть контент по теме, транскрипция с ключевыми словами. Сильный сигнал.</p>
+</div>
+</div>
+
+<div class="example">
+<div class="label">Конкретно для Ross Painting — что снять</div>
+<ul>
+<li>"Before & After: Exterior Painting in La Jolla" (2-3 мин, timelapse)</li>
+<li>"How Much Does House Painting Cost in San Diego? (2026 Prices)" (отвечает на FAQ)</li>
+<li>"Our Painting Process — From Quote to Completion" (показывает экспертизу)</li>
+<li>"5 Mistakes When Choosing a Painter" (educational, привлекает трафик)</li>
+</ul>
+<p style="color:var(--mint);">Даже iPhone видео + простой монтаж. AI-у всё равно на качество продакшена — ему важен текст и бренд.</p>
+</div>
+
+<!-- ==================== -->
+<h2>4. Цитаты экспертов в тексте — как это выглядит</h2>
+
+<div class="card">
+<p>Princeton доказал: добавление цитат в текст = <strong>+41% AI-видимость</strong>. Это самый мощный контентный сигнал.</p>
+</div>
+
+<div class="vs">
+<div class="bad">
+<div class="label" style="font-weight:700;">Без цитат (обычный текст)</div>
+<p style="color:var(--text2);">"Exterior painting in San Diego usually costs between $3,500 and $8,000. The price depends on the size of the house and the type of paint used."</p>
+</div>
+<div class="good">
+<div class="label" style="font-weight:700;">С цитатой (+41% видимость)</div>
+<p style="color:var(--text2);">"According to Victor Ross, founder of Ross Painting Group with 15+ years of experience: 'In San Diego's coastal climate, we recommend elastomeric paint for exterior surfaces — it expands and contracts with temperature changes, lasting 10-15 years versus 5-7 for standard latex.'"</p>
+</div>
+</div>
+
+<div class="example">
+<div class="label">Для IndoGig</div>
+<p style="color:var(--text2);">"According to Sergei Krushinskikh, founder of IndoGig: 'Bali's hospitality industry employs over 245,000 workers in F&B alone. Our WhatsApp-first approach achieves 95% response rate compared to 15% with traditional job portals.'"</p>
+</div>
+
+<div class="example">
+<div class="label">Для ContentDecode</div>
+<p style="color:var(--text2);">"ContentDecode analysis of 10,000 Instagram Reels shows that hooks containing a direct question receive 2.3x more saves than statement-based hooks, according to platform data collected in Q1 2026."</p>
+</div>
+
+<!-- ==================== -->
+<h2>5. Ссылки на авторитетные источники (+30%)</h2>
+
+<div class="card">
+<p>Princeton: ссылки на внешние авторитетные источники = +30% видимость. AI доверяет страницам которые ссылаются на проверенные данные.</p>
+</div>
+
+<div class="example">
+<div class="label">Для Ross Painting</div>
+<ul>
+<li>"According to <a href="#">HomeAdvisor's 2026 Cost Guide</a>, the average exterior painting cost in California is $4,200" — ссылка на .com с данными</li>
+<li>"San Diego's coastal humidity requires special paint formulations (<a href="#">EPA guidelines on lead paint</a>)" — .gov ссылка</li>
+<li>"The California Contractors State License Board <a href="#">requires License #C-33</a> for painting contractors" — .ca.gov ссылка</li>
+</ul>
+</div>
+
+<div class="example">
+<div class="label">Для IndoGig</div>
+<ul>
+<li>"Indonesia has 39.6 million blue-collar gig workers (<a href="#">BPS Statistics 2025</a>)" — .go.id ссылка</li>
+<li>"Bali received 6.95 million tourists in 2025, +9.7% YoY (<a href="#">Ministry of Tourism data</a>)"</li>
+<li>"WhatsApp penetration in Indonesia: 87% of population (<a href="#">We Are Social 2026</a>)"</li>
+</ul>
+</div>
+
+<div class="example">
+<div class="label">Для geoseo.today</div>
+<ul>
+<li>"Based on <a href='https://arxiv.org/abs/2311.09735'>Princeton KDD 2024 research</a>, quotation addition improves AI visibility by 41%"</li>
+<li>"Ahrefs' <a href='https://ahrefs.com/blog/ai-brand-visibility-correlations/'>75,000-brand study</a> found brand mentions correlate at r=0.664"</li>
+</ul>
+<p style="color:var(--mint);">У geoseo это уже реализовано — METHODOLOGY.md ссылается на 6 academic papers. Это наш козырь.</p>
+</div>
+
+<!-- ==================== -->
+<h2>6. Как SEO-ошибки Ross Painting влияют на AI-выдачу</h2>
+
+<div class="card">
+<table>
+<tr><th>Ошибка</th><th>Влияние на Google SEO</th><th>Влияние на AI/GEO</th></tr>
+<tr><td><strong>16 дублей titles</strong></td><td style="color:var(--red)">Google может не индексировать дубли</td><td style="color:var(--red)">AI путается — какую страницу цитировать? Выбирает конкурента</td></tr>
+<tr><td><strong>43 дубля descriptions</strong></td><td style="color:var(--orange)">Снижает CTR в выдаче</td><td style="color:var(--orange)">AI не может отличить страницы — generic описание не помогает извлечь ответ</td></tr>
+<tr><td><strong>Heading skip H1→H3</strong></td><td style="color:var(--orange)">Незначительно для Google</td><td style="color:var(--red)">AI парсит по заголовкам. Пропуск = потеря структуры = хуже извлекает чанки</td></tr>
+<tr><td><strong>93 картинки без alt</strong></td><td style="color:var(--orange)">Пропуск в image search</td><td style="color:var(--cyan)">Мульти-модальные AI (Gemini) не поймут что на картинке</td></tr>
+<tr><td><strong>Нет OG tags</strong></td><td style="color:var(--cyan)">Не влияет на ранг</td><td style="color:var(--cyan)">Не влияет на AI, но влияет на шеринг в соцсетях → меньше упоминаний</td></tr>
+<tr><td><strong>Нет canonical</strong></td><td style="color:var(--red)">Google может выбрать не ту версию</td><td style="color:var(--orange)">AI может цитировать дубль вместо основной страницы</td></tr>
+<tr><td><strong>6 orphan pages</strong></td><td style="color:var(--red)">Google не найдёт без ссылок</td><td style="color:var(--red)">AI тоже не найдёт — нет пути к странице</td></tr>
+</table>
+<p style="color:var(--mint);margin-top:12px;"><strong>Итог:</strong> Heading skip и дубли titles — самые вредные для GEO. Починить их = прямой рост в AI-выдаче.</p>
+</div>
+
+<!-- ==================== -->
+<h2>7. Google Business Profile — кому нужен</h2>
+
+<div class="card">
+<table>
+<tr><th>Проект</th><th>Нужен GBP?</th><th>Почему</th></tr>
+<tr><td><strong>Ross Painting</strong></td><td style="color:var(--mint)">Обязательно</td><td>Локальный бизнес. GBP = #1 для Local SEO и AI-ответов "painters near me"</td></tr>
+<tr><td><strong>IndoGig</strong></td><td style="color:var(--mint)">Да</td><td>Локальный бизнес на Бали. Отели ищут стаффинг рядом</td></tr>
+<tr><td><strong>geoseo.today</strong></td><td style="color:var(--red)">Нет</td><td>Онлайн SaaS, нет физической локации. GitHub + Product Hunt важнее</td></tr>
+<tr><td><strong>ContentDecode</strong></td><td style="color:var(--red)">Нет</td><td>Десктоп приложение, нет физической локации</td></tr>
+<tr><td><strong>sergeifounder.com</strong></td><td style="color:var(--orange)">Опционально</td><td>Можно создать как "Consultant", но не приоритет</td></tr>
+<tr><td><strong>Мамин сайт</strong></td><td style="color:var(--mint)">Да</td><td>Психолог = локальная услуга. GBP критичен</td></tr>
+</table>
+</div>
+
+<!-- ==================== -->
+<h2>8. Накрученные отзывы — видит ли AI?</h2>
+
+<div class="card">
+<p style="color:var(--text);font-weight:600;">Google активно борется с фейковыми отзывами. AI учитывает:</p>
+<ul>
+<li><strong>Паттерн одинаковых отзывов</strong> — 10 отзывов "Great service!" за один день = подозрительно</li>
+<li><strong>Профили авторов</strong> — аккаунт создан вчера, 1 отзыв, нет фото = фейк</li>
+<li><strong>Скорость появления</strong> — 0 отзывов → 50 за неделю = накрутка</li>
+<li><strong>Разнообразие текста</strong> — все пишут одинаково = бот</li>
+<li><strong>Геолокация</strong> — отзывы из другой страны на локальный бизнес = подозрительно</li>
+</ul>
+</div>
+
+<div class="warn">
+<p style="color:var(--red);font-weight:700;">Что AI делает с накрученными отзывами:</p>
+<p>AI смотрит на <strong>общую картину</strong>. Если у бизнеса 100 отзывов на Google, 50 на Yelp, упоминания на Reddit — AI считает его реальным. Если 100 отзывов на Google и 0 везде больше — подозрительно.</p>
+<p style="margin-top:8px;">SparkToro (2026): AI выдаёт <strong>менее 1% одинаковых результатов</strong> при повторных запросах. Значит даже накрученные отзывы не гарантируют стабильное цитирование.</p>
+<p style="margin-top:8px;color:var(--mint);"><strong>Лучшая стратегия:</strong> настоящие отзывы на 3+ платформах (Google + Yelp + Facebook). 17 настоящих > 100 накрученных.</p>
+</div>
+
+<!-- ==================== -->
+<h2>9. Стратегия продвижения каждого проекта</h2>
+
+<!-- Ross Painting -->
+<div class="strat">
+<h4 style="color:var(--mint);">🎨 Ross Painting Group</h4>
+<p style="font-size:0.78rem;color:var(--text3);">Цель: #1 в AI-ответах "house painters San Diego/LA/OC"</p>
+<ul>
+<li><strong>Неделя 1-2:</strong> Починить 16 дублей titles + heading skips (прямой рост AI)</li>
+<li><strong>Неделя 2-3:</strong> YouTube — снять 3 видео (before/after, pricing, process)</li>
+<li><strong>Неделя 3-4:</strong> Google отзывы: попросить 10 реальных клиентов оставить отзыв</li>
+<li><strong>Месяц 2:</strong> 4 блог-поста с цифрами и ссылками на .gov источники</li>
+<li><strong>Месяц 2:</strong> Houzz + Angi + BBB профили (больше упоминаний бренда)</li>
+<li><strong>Месяц 3:</strong> Reddit r/SanDiego — отвечать на вопросы про painting</li>
+<li><strong>Метрика:</strong> GEO 94→97, Google отзывы 17→40, YouTube 0→5 видео</li>
+</ul>
+</div>
+
+<!-- IndoGig -->
+<div class="strat">
+<h4 style="color:var(--orange);">🏨 IndoGig</h4>
+<p style="font-size:0.78rem;color:var(--text3);">Цель: "staffing Bali" и "hotel workers Bali" — быть в AI-ответах</p>
+<ul>
+<li><strong>Сейчас:</strong> Google Business Profile PT INDOGIG (Бали)</li>
+<li><strong>После MVP:</strong> Статья на DailySocial или Tech in Asia про стаффинг в Индонезии</li>
+<li><strong>Месяц 1:</strong> LinkedIn — посты от Sergei о Bali hospitality staffing (1/неделю)</li>
+<li><strong>Месяц 2:</strong> YouTube — "How Bali Hotels Staff Events via WhatsApp" (1 видео)</li>
+<li><strong>Месяц 2:</strong> indogig.com/blog — 3 статьи с данными рынка (.go.id ссылки)</li>
+<li><strong>Месяц 3:</strong> Профили на JobStreet, Glassdoor, Kalibrr</li>
+<li><strong>Метрика:</strong> Упоминания бренда на 5+ внешних сайтах</li>
+</ul>
+</div>
+
+<!-- geoseo.today -->
+<div class="strat">
+<h4 style="color:var(--cyan);">🔬 geoseo.today</h4>
+<p style="font-size:0.78rem;color:var(--text3);">Цель: "best GEO audit tool" — быть в AI-ответах и GitHub Trending</p>
+<ul>
+<li><strong>Неделя 1:</strong> GitHub public + README с research ссылками (AI индексирует GitHub)</li>
+<li><strong>Неделя 1:</strong> HN + Reddit — посты генерируют упоминания бренда</li>
+<li><strong>Неделя 2:</strong> dev.to + Hashnode статьи (AI индексирует эти платформы)</li>
+<li><strong>Неделя 2:</strong> Product Hunt launch — PH высоко ранжируется в AI-ответах</li>
+<li><strong>Месяц 1:</strong> "State of GEO 2026" — виральный контент с данными</li>
+<li><strong>Месяц 2:</strong> Попасть в Awesome-GEO списки на GitHub (бэклинки + discovery)</li>
+<li><strong>GBP не нужен</strong> — онлайн SaaS. GitHub stars = наш "отзывы"</li>
+<li><strong>Метрика:</strong> 300+ GitHub stars, 5+ статей на внешних платформах</li>
+</ul>
+</div>
+
+<!-- ContentDecode -->
+<div class="strat">
+<h4 style="color:var(--pink);">📊 ContentDecode</h4>
+<p style="font-size:0.78rem;color:var(--text3);">Цель: валидация за 2 часа, не продвижение</p>
+<ul>
+<li><strong>Day 15:</strong> 1 демо-видео (2 мин) → закинуть в 10 каналов</li>
+<li><strong>Day 22:</strong> Проверить реакцию. 0 = kill. 5+ = продолжаем</li>
+<li><strong>Если продолжаем:</strong> Product Hunt launch + Reddit r/InstagramMarketing</li>
+<li><strong>GBP не нужен</strong> — десктоп приложение</li>
+<li><strong>YouTube</strong> — только если валидация прошла. 1 видео "How to decode competitor's Instagram strategy"</li>
+</ul>
+</div>
+
+<!-- Мамин сайт -->
+<div class="strat">
+<h4 style="color:var(--purple);">💜 Мамин сайт (lubov-krushinskikh.ru)</h4>
+<p style="font-size:0.78rem;color:var(--text3);">Цель: "психолог [город]" в Яндекс + Яндекс Нейро</p>
+<ul>
+<li><strong>Обязательно:</strong> Google Business Profile + Яндекс.Бизнес профиль</li>
+<li><strong>Обязательно:</strong> 10+ отзывов на Google + Яндекс Карты + ProDoctorov</li>
+<li><strong>Сайт:</strong> Каждая страница — ответ на конкретный вопрос ("как справиться с тревогой")</li>
+<li><strong>Яндекс Нейро:</strong> Быть в Топ-5 Яндекса обязательно (Нейро цитирует только Топ-5)</li>
+<li><strong>E-E-A-T:</strong> Фото, диплом, опыт, ссылки на соцсети — критично для Яндекса</li>
+<li><strong>YouTube:</strong> 1 видео "Как выбрать психолога" = сильный сигнал</li>
+</ul>
+</div>
+
+<!-- sergeifounder.com -->
+<div class="strat">
+<h4 style="color:var(--blue);">👤 sergeifounder.com</h4>
+<p style="font-size:0.78rem;color:var(--text3);">Цель: личный бренд founder'а</p>
+<ul>
+<li><strong>Сайт:</strong> Портфолио с ссылками на все проекты (AI видит связи)</li>
+<li><strong>LinkedIn:</strong> 1 пост/неделю — build in public (AI индексирует LinkedIn)</li>
+<li><strong>GitHub:</strong> Активный профиль с pinned repos (AI индексирует)</li>
+<li><strong>Twitter:</strong> @sergeifounder — посты про строительство продуктов</li>
+<li><strong>GBP:</strong> Не нужен (не локальная услуга)</li>
+<li><strong>YouTube:</strong> По желанию — "Building a startup in Bali" влог</li>
+</ul>
+</div>
+
+<!-- ==================== -->
+<h2>10. Быстрый чеклист: что сделать первым</h2>
+
+<div class="hl">
+<p style="color:var(--mint);font-weight:700;margin-bottom:8px;">ТОП-5 действий которые дадут максимум AI-видимости:</p>
+<ol style="font-size:0.84rem;color:var(--text2);">
+<li style="padding:4px 0;"><strong>Починить heading skips и duplicate titles на Ross Painting</strong> — прямой рост GEO (2-3 часа)</li>
+<li style="padding:4px 0;"><strong>Снять 1 YouTube видео для Ross Painting</strong> — #1 AI сигнал (2 часа)</li>
+<li style="padding:4px 0;"><strong>Опубликовать geoseo на GitHub</strong> — старт AI-видимости бренда (1 день)</li>
+<li style="padding:4px 0;"><strong>Создать GBP для IndoGig + мамин сайт</strong> — локальный AI-сигнал (30 мин каждый)</li>
+<li style="padding:4px 0;"><strong>Написать 1 пост на LinkedIn от Sergei</strong> — бренд-упоминание (15 мин)</li>
+</ol>
+</div>
+
+<div style="text-align:center;margin-top:40px;padding:20px;font-size:0.68rem;color:var(--text3);font-family:'JetBrains Mono',monospace;">
+  Данные: Princeton KDD 2024, Ahrefs 2026 (146M SERPs), U.Tokyo 2026, Conductor (3.3B sessions), OtterlyAI, SparkToro<br>
+  Полная методология: geoseo.today/methodology
+</div>
+
+</body>
+</html>

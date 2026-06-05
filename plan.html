@@ -1509,5 +1509,307 @@
   Generated June 5, 2026 · Sergei Krushinskikh · geoseo.today
 </div>
 
+<!-- ========================================== -->
+<!-- 8. INDOGIG SPEED BUILD PLAN -->
+<!-- ========================================== -->
+<div class="section">
+  <div class="section-title"><span class="num">08</span> IndoGig — Speed Build Plan (2-3 недели)</div>
+
+  <div style="background:linear-gradient(135deg,rgba(251,146,60,0.08),rgba(251,146,60,0.03));border:1px solid rgba(251,146,60,0.2);border-radius:16px;padding:24px;margin-bottom:24px;">
+    <div style="font-size:0.85rem;color:var(--text2);line-height:1.7;">
+      <strong style="color:var(--orange);">WhatsApp API уже аппрувлен</strong> — главный блокер снят. Осталось написать код.<br>
+      Gateway 60% написан. Прототип готов. Суккма = local partner для тестов.
+    </div>
+  </div>
+
+  <!-- Week 1 -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:12px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <h4 style="font-size:0.95rem;color:var(--orange);">Неделя 1: Бот + Database + Оба flow</h4>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--text3);">5 дней</span>
+    </div>
+    <div style="font-size:0.8rem;color:var(--text2);line-height:1.8;">
+      <div style="padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Пн</span> Supabase schema: workers, employers, shifts, checkins, ratings. Миграции</div>
+      <div style="padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Вт</span> WhatsApp webhook: входящие сообщения → роутинг по ролям (HIRE/KERJA/кнопки)</div>
+      <div style="padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Ср</span> Employer flow: "Мне нужны 3 официанта на субботу" → создание shift в DB</div>
+      <div style="padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Чт</span> Worker flow: регистрация, просмотр доступных смен, принять/отклонить</div>
+      <div style="padding:5px 0;display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Пт</span> Auto-matching: employer создал shift → бот уведомляет подходящих воркеров</div>
+    </div>
+    <div style="margin-top:10px;padding:8px 12px;background:rgba(45,212,160,0.05);border-radius:8px;font-size:0.75rem;color:var(--mint);">
+      Результат: можно написать боту, создать заказ, воркер получает уведомление и принимает смену
+    </div>
+  </div>
+
+  <!-- Week 2 -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:12px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <h4 style="font-size:0.95rem;color:var(--orange);">Неделя 2: Web Views + Templates + Deploy</h4>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--text3);">5 дней</span>
+    </div>
+    <div style="font-size:0.8rem;color:var(--text2);line-height:1.8;">
+      <div style="padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Пн</span> Web view: Check-in (GPS + камера) — ссылка из WhatsApp → Chrome → фото + геолокация</div>
+      <div style="padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Вт</span> Web view: Employer dashboard — список смен, статусы воркеров, подтверждение</div>
+      <div style="padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Ср</span> Template messages: создать 5-7 шаблонов (назначение, напоминание, чекин) → отправить на аппрув Meta</div>
+      <div style="padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Чт</span> Deploy: Railway (backend) + Vercel (web views). Webhook → production URL</div>
+      <div style="padding:5px 0;display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Пт</span> Тест с Сукмой: полный цикл заказ → назначение → чекин → чекаут</div>
+    </div>
+    <div style="margin-top:10px;padding:8px 12px;background:rgba(45,212,160,0.05);border-radius:8px;font-size:0.75rem;color:var(--mint);">
+      Результат: полный рабочий цикл. Employer заказывает → воркер приходит → чекин с фото → оплата
+    </div>
+  </div>
+
+  <!-- Week 3 -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:12px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <h4 style="font-size:0.95rem;color:var(--orange);">Неделя 3: Админка + FB Ads + Первые заказы</h4>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--text3);">5 дней</span>
+    </div>
+    <div style="font-size:0.8rem;color:var(--text2);line-height:1.8;">
+      <div style="padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Пн</span> Админка: web view для Сергея/Сукмы — все заказы, воркеры, статусы, ручное назначение</div>
+      <div style="padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Вт</span> Rating system: после смены employer оценивает воркера (1-5 звёзд в WhatsApp)</div>
+      <div style="padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Ср</span> FB Ads: 2 кампании — HIRE (employers) + KERJA (workers). Бюджет $50 на тест</div>
+      <div style="padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Чт</span> Первые реальные заказы через Сукму (существующие 3 клиента)</div>
+      <div style="padding:5px 0;display:flex;gap:8px;"><span style="color:var(--orange);font-weight:700;">Пт</span> Итерация: фиксы по фидбэку первых заказов</div>
+    </div>
+    <div style="margin-top:10px;padding:8px 12px;background:rgba(45,212,160,0.05);border-radius:8px;font-size:0.75rem;color:var(--mint);">
+      Результат: первые оплаченные заказы. Kill criteria запущены (60 дней).
+    </div>
+  </div>
+
+  <!-- Costs -->
+  <div class="metrics-grid" style="margin-top:20px;">
+    <div class="metric-card">
+      <div class="value" style="font-size:1.3rem;color:var(--orange);">$5</div>
+      <div class="label">Затраты / мес (старт)</div>
+      <div class="target">Railway $5. Supabase + Vercel free</div>
+    </div>
+    <div class="metric-card">
+      <div class="value" style="font-size:1.3rem;color:var(--orange);">$50</div>
+      <div class="label">FB Ads тест</div>
+      <div class="target">2 кампании: HIRE + KERJA</div>
+    </div>
+    <div class="metric-card">
+      <div class="value" style="font-size:1.3rem;color:var(--orange);">$0</div>
+      <div class="label">WhatsApp API</div>
+      <div class="target">1000 msg/мес free</div>
+    </div>
+    <div class="metric-card">
+      <div class="value" style="font-size:1.3rem;color:var(--mint);">$55</div>
+      <div class="label">TOTAL для запуска</div>
+      <div class="target">vs Bubble $115/мес</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- 9. GEOSEO COMPLETION PLAN -->
+<!-- ========================================== -->
+<div class="section">
+  <div class="section-title"><span class="num">09</span> geoseo.today — Что осталось доделать</div>
+
+  <div class="eco-grid" style="grid-template-columns: 1fr 1fr;">
+
+    <!-- Done -->
+    <div style="background:rgba(45,212,160,0.05);border:1px solid rgba(45,212,160,0.15);border-radius:14px;padding:20px;">
+      <h4 style="color:var(--mint);font-size:0.9rem;margin-bottom:12px;">Сделано</h4>
+      <div style="font-size:0.78rem;color:var(--text2);line-height:1.8;">
+        <div style="padding:3px 0;">Продукт: 135+ проверок, SEO + GEO v3</div>
+        <div style="padding:3px 0;">Site crawl 200 стр + Brotli fix</div>
+        <div style="padding:3px 0;">AI рекомендации (Gemini)</div>
+        <div style="padding:3px 0;">PDF / Excel / Markdown экспорт</div>
+        <div style="padding:3px 0;">12 языков UI</div>
+        <div style="padding:3px 0;">METHODOLOGY.md (290 строк)</div>
+        <div style="padding:3px 0;">README.md (203 строки)</div>
+        <div style="padding:3px 0;">LICENSE (MIT), CONTRIBUTING.md</div>
+        <div style="padding:3px 0;">.env.example, .gitignore, Docker</div>
+        <div style="padding:3px 0;">Issue templates</div>
+        <div style="padding:3px 0;">Секреты убраны из кода</div>
+        <div style="padding:3px 0;">Deploy на Railway работает</div>
+      </div>
+    </div>
+
+    <!-- Todo -->
+    <div style="background:rgba(251,146,60,0.05);border:1px solid rgba(251,146,60,0.15);border-radius:14px;padding:20px;">
+      <h4 style="color:var(--orange);font-size:0.9rem;margin-bottom:12px;">Осталось</h4>
+      <div style="font-size:0.78rem;color:var(--text2);line-height:1.8;">
+        <div style="padding:3px 0;"><strong>GitHub Launch (1 день):</strong></div>
+        <div style="padding:3px 0;">- GIF демо (ты записываешь)</div>
+        <div style="padding:3px 0;">- 4-5 screenshots для README</div>
+        <div style="padding:3px 0;">- OG image (social preview)</div>
+        <div style="padding:3px 0;">- Repo → Public</div>
+        <div style="padding:3px 0;margin-top:8px;"><strong>SaaS обёртка (2-3 дня):</strong></div>
+        <div style="padding:3px 0;">- Supabase + Google login</div>
+        <div style="padding:3px 0;">- Dashboard "мои проекты"</div>
+        <div style="padding:3px 0;">- Score history + графики</div>
+        <div style="padding:3px 0;">- Stripe ($29/мес Pro)</div>
+        <div style="padding:3px 0;margin-top:8px;"><strong>Launch Week (5 дней):</strong></div>
+        <div style="padding:3px 0;">- HN + Reddit + PH + dev.to + vc.ru</div>
+        <div style="padding:3px 0;">- DM исследователям</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- 10. MONEY PLAN -->
+<!-- ========================================== -->
+<div class="section">
+  <div class="section-title"><span class="num">10</span> Money Plan — Путь к $4K/мес</div>
+
+  <!-- Timeline -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px;">
+    <div style="display:flex;align-items:end;gap:8px;height:160px;margin-bottom:16px;padding:0 4px;">
+
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text3);margin-bottom:4px;">$0</div>
+        <div style="width:100%;height:2px;background:var(--text3);border-radius:4px;"></div>
+        <div style="font-size:0.55rem;color:var(--text3);margin-top:6px;text-align:center;">Сейчас<br>June 5</div>
+      </div>
+
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--purple);margin-bottom:4px;">$600</div>
+        <div style="width:100%;height:15px;border-radius:4px 4px 0 0;background:linear-gradient(to top,var(--purple),var(--purple));"></div>
+        <div style="font-size:0.55rem;color:var(--text3);margin-top:6px;text-align:center;">Month 1<br>July</div>
+      </div>
+
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--cyan);margin-bottom:4px;">$1.5K</div>
+        <div style="width:100%;height:40px;border-radius:4px 4px 0 0;background:linear-gradient(to top,var(--purple),var(--cyan));"></div>
+        <div style="font-size:0.55rem;color:var(--text3);margin-top:6px;text-align:center;">Month 3<br>Sept</div>
+      </div>
+
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--mint);margin-bottom:4px;">$3.3K</div>
+        <div style="width:100%;height:80px;border-radius:4px 4px 0 0;background:linear-gradient(to top,var(--cyan),var(--mint));"></div>
+        <div style="font-size:0.55rem;color:var(--text3);margin-top:6px;text-align:center;">Month 6<br>Dec</div>
+      </div>
+
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--mint);margin-bottom:4px;">$6K+</div>
+        <div style="width:100%;height:140px;border-radius:4px 4px 0 0;background:linear-gradient(to top,var(--mint),var(--yellow));"></div>
+        <div style="font-size:0.55rem;color:var(--text3);margin-top:6px;text-align:center;">Month 12<br>June '27</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Breakdown table -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:20px;">
+    <table style="width:100%;border-collapse:collapse;font-size:0.75rem;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--border);color:var(--text3);font-family:'JetBrains Mono',monospace;font-size:0.65rem;">
+          <th style="padding:12px;text-align:left;">Источник</th>
+          <th style="padding:12px;text-align:center;">Month 1</th>
+          <th style="padding:12px;text-align:center;">Month 3</th>
+          <th style="padding:12px;text-align:center;">Month 6</th>
+          <th style="padding:12px;text-align:center;">Month 12</th>
+        </tr>
+      </thead>
+      <tbody style="color:var(--text2);">
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;"><span style="color:var(--purple);">Клиенты</span> (Ross, SynergyPro + новые)</td>
+          <td style="padding:10px;text-align:center;">$600</td>
+          <td style="padding:10px;text-align:center;">$1,000</td>
+          <td style="padding:10px;text-align:center;">$1,800</td>
+          <td style="padding:10px;text-align:center;">$2,500</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;"><span style="color:var(--cyan);">geoseo Pro</span> ($29/мес подписки)</td>
+          <td style="padding:10px;text-align:center;">$0</td>
+          <td style="padding:10px;text-align:center;">$200</td>
+          <td style="padding:10px;text-align:center;">$500</td>
+          <td style="padding:10px;text-align:center;">$1,000</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;"><span style="color:var(--orange);">IndoGig</span> (staffing комиссия)</td>
+          <td style="padding:10px;text-align:center;">$0</td>
+          <td style="padding:10px;text-align:center;">$0</td>
+          <td style="padding:10px;text-align:center;">$500</td>
+          <td style="padding:10px;text-align:center;">$2,100</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:10px 12px;"><span style="color:var(--blue);">Консалтинг</span> (от GitHub authority)</td>
+          <td style="padding:10px;text-align:center;">$0</td>
+          <td style="padding:10px;text-align:center;">$300</td>
+          <td style="padding:10px;text-align:center;">$500</td>
+          <td style="padding:10px;text-align:center;">$500</td>
+        </tr>
+        <tr style="background:rgba(45,212,160,0.05);">
+          <td style="padding:12px;font-weight:700;color:var(--text);">TOTAL</td>
+          <td style="padding:12px;text-align:center;font-weight:700;color:var(--text);font-family:'JetBrains Mono',monospace;">$600</td>
+          <td style="padding:12px;text-align:center;font-weight:700;color:var(--mint);font-family:'JetBrains Mono',monospace;">$1,500</td>
+          <td style="padding:12px;text-align:center;font-weight:700;color:var(--mint);font-family:'JetBrains Mono',monospace;">$3,300</td>
+          <td style="padding:12px;text-align:center;font-weight:700;color:var(--yellow);font-family:'JetBrains Mono',monospace;">$6,100</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Costs -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;">
+    <h4 style="font-size:0.9rem;color:var(--red);margin-bottom:12px;">Ежемесячные расходы</h4>
+    <div style="font-size:0.78rem;color:var(--text2);line-height:1.8;">
+      <div style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid var(--border);">
+        <span>Railway (geoseo prod)</span><span style="font-family:'JetBrains Mono',monospace;color:var(--red);">$5</span>
+      </div>
+      <div style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid var(--border);">
+        <span>Railway (IndoGig backend)</span><span style="font-family:'JetBrains Mono',monospace;color:var(--red);">$5</span>
+      </div>
+      <div style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid var(--border);">
+        <span>Supabase (free tier обоих)</span><span style="font-family:'JetBrains Mono',monospace;color:var(--mint);">$0</span>
+      </div>
+      <div style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid var(--border);">
+        <span>Vercel (free tier)</span><span style="font-family:'JetBrains Mono',monospace;color:var(--mint);">$0</span>
+      </div>
+      <div style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid var(--border);">
+        <span>Домены (geoseo.today + indogig.com)</span><span style="font-family:'JetBrains Mono',monospace;color:var(--red);">~$3</span>
+      </div>
+      <div style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid var(--border);">
+        <span>Gemini API (geoseo AI recs)</span><span style="font-family:'JetBrains Mono',monospace;color:var(--red);">~$5</span>
+      </div>
+      <div style="padding:4px 0;display:flex;justify-content:space-between;border-bottom:1px solid var(--border);">
+        <span>FB Ads (IndoGig тест)</span><span style="font-family:'JetBrains Mono',monospace;color:var(--red);">$50-150</span>
+      </div>
+      <div style="padding:8px 0;display:flex;justify-content:space-between;font-weight:700;">
+        <span style="color:var(--text);">TOTAL расходы</span><span style="font-family:'JetBrains Mono',monospace;color:var(--red);">$68-168/мес</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Break-even -->
+  <div class="eco-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+    <div class="metric-card" style="border-color:rgba(45,212,160,0.3);">
+      <div class="value" style="font-size:1.2rem;color:var(--mint);">2 клиента</div>
+      <div class="label">Break-even (расходы)</div>
+      <div class="target">2 × $300 = $600 > $168 costs</div>
+    </div>
+    <div class="metric-card" style="border-color:rgba(45,212,160,0.3);">
+      <div class="value" style="font-size:1.2rem;color:var(--mint);">Month 3</div>
+      <div class="label">$1K+/мес чистыми</div>
+      <div class="target">clients + geoseo Pro</div>
+    </div>
+    <div class="metric-card" style="border-color:rgba(251,146,60,0.3);">
+      <div class="value" style="font-size:1.2rem;color:var(--orange);">Month 12</div>
+      <div class="label">$6K+/мес total</div>
+      <div class="target">clients + geoseo + IndoGig</div>
+    </div>
+  </div>
+
+  <!-- Key insight -->
+  <div style="margin-top:20px;background:linear-gradient(135deg,rgba(45,212,160,0.08),rgba(34,211,238,0.05));border:1px solid rgba(45,212,160,0.2);border-radius:14px;padding:20px;">
+    <h4 style="color:var(--mint);font-size:0.9rem;margin-bottom:8px;">Ключевой принцип</h4>
+    <div style="font-size:0.8rem;color:var(--text2);line-height:1.7;">
+      <strong>Клиенты + geoseo = кэш сейчас.</strong> Покрывают расходы на жизнь + разработку IndoGig.<br>
+      <strong>IndoGig = рост потом.</strong> Когда MVP заработает — это $2K→$36K/мес trajectory.<br>
+      <strong>Не нужны инвестиции.</strong> Всё self-funded из клиентской работы. VC — опция на будущее, не необходимость.
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center;padding:40px 0;color:var(--text3);font-size:0.75rem;font-family:'JetBrains Mono',monospace;">
+  Updated June 5, 2026 · Sergei Krushinskikh
+</div>
+
 </body>
 </html>

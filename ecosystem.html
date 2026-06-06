@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Экосистема Сергея — Как всё работает вместе</title>
+<meta name="robots" content="noindex">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  :root { --bg:#0a0a0a; --surface:#141414; --border:rgba(255,255,255,0.06); --mint:#2dd4a0; --cyan:#22d3ee; --purple:#a78bfa; --orange:#fb923c; --red:#f87171; --yellow:#fbbf24; --blue:#60a5fa; --pink:#f472b6; --text:#fff; --text2:#8c8c8c; --text3:#595959; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.7; padding:20px; max-width:800px; margin:0 auto; }
+  h1 { font-size:1.6rem; font-weight:900; margin-bottom:4px; background:linear-gradient(135deg,var(--mint),var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  h2 { font-size:1.15rem; font-weight:800; margin:36px 0 14px; padding-top:20px; border-top:1px solid var(--border); }
+  h3 { font-size:0.95rem; font-weight:700; margin:20px 0 8px; color:var(--cyan); }
+  p, li { font-size:0.84rem; color:var(--text2); margin-bottom:10px; }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px; margin-bottom:16px; }
+  .hl { background:rgba(45,212,160,0.08); border:1px solid rgba(45,212,160,0.2); border-radius:12px; padding:16px; margin:16px 0; }
+  .warn { background:rgba(248,113,113,0.08); border:1px solid rgba(248,113,113,0.2); border-radius:12px; padding:16px; margin:16px 0; }
+  table { width:100%; border-collapse:collapse; font-size:0.8rem; margin:12px 0; }
+  th { text-align:left; padding:8px; color:var(--text3); font-family:'JetBrains Mono',monospace; font-size:0.68rem; border-bottom:1px solid var(--border); }
+  td { padding:8px; color:var(--text2); border-bottom:1px solid var(--border); }
+  .nav { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
+  .nav a { color:var(--mint); text-decoration:none; background:rgba(45,212,160,0.1); padding:6px 12px; border-radius:8px; font-size:0.72rem; font-weight:600; }
+  .flow { display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; margin:16px 0; padding:16px; background:var(--surface); border-radius:12px; border:1px solid var(--border); font-size:0.78rem; }
+  .flow-node { background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:10px; padding:10px 14px; text-align:center; font-weight:600; min-width:120px; }
+  .flow-node.main { border-color:var(--mint); background:rgba(45,212,160,0.1); color:var(--mint); }
+  .flow-arrow { color:var(--text3); }
+  a { color:var(--mint); text-decoration:none; }
+  ul { padding-left:18px; }
+  .tag { font-family:'JetBrains Mono',monospace; font-size:0.6rem; padding:2px 8px; border-radius:4px; }
+  .metric { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--border); font-size:0.8rem; }
+  .metric:last-child { border:none; }
+  .metric .val { font-family:'JetBrains Mono',monospace; font-weight:600; color:var(--mint); }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="/plan.html">План</a>
+  <a href="/geo-guide.html">GEO кратко</a>
+  <a href="/geo-deep.html">GEO глубоко</a>
+  <a href="/ecosystem.html" style="background:var(--mint);color:var(--bg);">Экосистема</a>
+</div>
+
+<h1>Экосистема Сергея Крушинских</h1>
+<p style="color:var(--text3);font-size:0.78rem;">Как проекты, аккаунты и рынки работают вместе. Стратегия на основе кейса John Rush ($300K ARR из 24 проектов).</p>
+
+<!-- ============================= -->
+<h2>1. Урок от John Rush — почему экосистема важнее продукта</h2>
+
+<div class="card">
+<p style="color:var(--text);">John Rush стал #1 не потому что SEOBot лучший продукт. А потому что у него <strong>24 проекта которые продвигают друг друга</strong>.</p>
+
+<div class="metric"><span>Трафик от cross-promotion</span><span class="val">30% всего трафика</span></div>
+<div class="metric"><span>Проектов в экосистеме</span><span class="val">24 продукта</span></div>
+<div class="metric"><span>Twitter подписчиков</span><span class="val">200K+</span></div>
+<div class="metric"><span>ARR</span><span class="val">$300K</span></div>
+<div class="metric"><span>Платная реклама</span><span class="val" style="color:var(--red);">ПРОВАЛ</span></div>
+
+<p style="margin-top:12px;color:var(--mint);font-weight:600;">Продукт = 30% успеха. Дистрибуция = 70%.</p>
+</div>
+
+<!-- ============================= -->
+<h2>2. Твоя экосистема — 6 проектов</h2>
+
+<div class="card">
+<p style="color:var(--text);">У John Rush 24 проекта. У тебя 6 — но каждый должен ссылаться на остальные.</p>
+
+<table>
+<tr><th>Проект</th><th>Рынок</th><th>Роль в экосистеме</th></tr>
+<tr><td style="color:var(--mint);font-weight:700;">geoseo.today</td><td>Global + РФ</td><td>Авторитет + Lead magnet + Инструмент</td></tr>
+<tr><td style="color:var(--orange);font-weight:700;">IndoGig</td><td>Индонезия</td><td>Главный бизнес, VC-потенциал</td></tr>
+<tr><td style="color:var(--purple);font-weight:700;">Клиенты (Ross, SynergyPro)</td><td>US + Бали</td><td>Cash flow + кейсы для geoseo</td></tr>
+<tr><td style="color:var(--blue);font-weight:700;">sergeifounder.com</td><td>Global</td><td>Hub — все дороги ведут сюда</td></tr>
+<tr><td style="color:var(--pink);font-weight:700;">ContentDecode</td><td>Global</td><td>Валидация (2 часа)</td></tr>
+<tr><td style="color:var(--purple);font-weight:700;">lubov-krushinskikh.ru</td><td>РФ</td><td>Клиент (мамин сайт)</td></tr>
+</table>
+</div>
+
+<!-- ============================= -->
+<h2>3. Как проекты линкуют друг на друга</h2>
+
+<div class="card">
+<h3>Правило: каждый проект ссылается на 2+ других</h3>
+
+<table>
+<tr><th>Проект</th><th>Ссылается на</th><th>Где</th></tr>
+<tr><td>geoseo.today</td><td>sergeifounder.com, GitHub</td><td>Footer: "Built by Sergei Krushinskikh"</td></tr>
+<tr><td>IndoGig</td><td>sergeifounder.com</td><td>Footer: "Founded by Sergei Krushinskikh"</td></tr>
+<tr><td>rosspaintinggroup.com</td><td>sergeifounder.com</td><td>Footer: "Website by sergeifounder.com"</td></tr>
+<tr><td>sergeifounder.com</td><td>geoseo, IndoGig, GitHub, LinkedIn</td><td>Главная страница — все проекты</td></tr>
+<tr><td>GitHub README</td><td>geoseo.today, sergeifounder.com</td><td>"Built by" + "Hosted version"</td></tr>
+<tr><td>LinkedIn</td><td>geoseo, IndoGig, sergeifounder</td><td>Featured + Experience</td></tr>
+<tr><td>Twitter @sergeifounder</td><td>geoseo, IndoGig</td><td>Bio + pinned tweet</td></tr>
+<tr><td>Twitter @geoseo_today</td><td>geoseo.today, GitHub</td><td>Bio + link</td></tr>
+<tr><td>dev.to статьи</td><td>geoseo.today, GitHub</td><td>Ссылки в тексте</td></tr>
+<tr><td>vc.ru статьи</td><td>geoseo.today</td><td>Ссылки в тексте</td></tr>
+</table>
+
+<p style="color:var(--mint);margin-top:12px;">Каждая ссылка = AI видит связь между проектами → усиливает entity "Sergei Krushinskikh"</p>
+</div>
+
+<div class="flow">
+<div class="flow-node">Twitter</div>
+<div class="flow-arrow">→</div>
+<div class="flow-node main">sergeifounder.com</div>
+<div class="flow-arrow">→</div>
+<div class="flow-node">geoseo.today</div>
+</div>
+<div class="flow">
+<div class="flow-node">LinkedIn</div>
+<div class="flow-arrow">→</div>
+<div class="flow-node main">sergeifounder.com</div>
+<div class="flow-arrow">→</div>
+<div class="flow-node">IndoGig</div>
+</div>
+<div class="flow">
+<div class="flow-node">GitHub</div>
+<div class="flow-arrow">→</div>
+<div class="flow-node main">geoseo.today</div>
+<div class="flow-arrow">→</div>
+<div class="flow-node">клиенты</div>
+</div>
+<div class="flow">
+<div class="flow-node">vc.ru / dev.to</div>
+<div class="flow-arrow">→</div>
+<div class="flow-node main">geoseo.today</div>
+<div class="flow-arrow">→</div>
+<div class="flow-node">sergeifounder.com</div>
+</div>
+<div class="flow">
+<div class="flow-node">Ross Painting</div>
+<div class="flow-arrow">→ кейс →</div>
+<div class="flow-node main">geoseo.today</div>
+<div class="flow-arrow">→ контент →</div>
+<div class="flow-node">Twitter / dev.to</div>
+</div>
+
+<!-- ============================= -->
+<h2>4. Англоязычный рынок — стратегия</h2>
+
+<div class="card">
+<h3 style="color:var(--mint);">Цель: авторитет в GEO-нише + клиенты на web dev</h3>
+
+<table>
+<tr><th>Канал</th><th>Что делать</th><th>Частота</th><th>Ожидание</th></tr>
+<tr><td style="font-weight:600;">GitHub</td><td>geoseo-today (open source)</td><td>Одноразово + issues</td><td>300-1000 stars за месяц</td></tr>
+<tr><td style="font-weight:600;">Hacker News</td><td>"Show HN" пост</td><td>1 раз</td><td>100-500 stars</td></tr>
+<tr><td style="font-weight:600;">Reddit</td><td>r/SEO, r/webdev, r/opensource</td><td>Launch day + 1/мес</td><td>50-200 upvotes</td></tr>
+<tr><td style="font-weight:600;">Product Hunt</td><td>Launch geoseo</td><td>1 раз</td><td>100-300 upvotes</td></tr>
+<tr><td style="font-weight:600;">Twitter @geoseo_today</td><td>Research facts, tips, case studies</td><td>1/день</td><td>200 followers/мес</td></tr>
+<tr><td style="font-weight:600;">Twitter @sergeifounder</td><td>Build in public: geoseo + IndoGig</td><td>3/неделю</td><td>Личный бренд</td></tr>
+<tr><td style="font-weight:600;">dev.to / Hashnode</td><td>Технические статьи про GEO</td><td>1/неделю</td><td>SEO трафик</td></tr>
+<tr><td style="font-weight:600;">LinkedIn</td><td>Посты от Sergei как founder</td><td>1/неделю</td><td>B2B лиды</td></tr>
+<tr><td style="font-weight:600;">YouTube</td><td>"How GEO works", tool demos</td><td>1-2/мес</td><td>r=0.737 AI сигнал</td></tr>
+</table>
+
+<div class="hl">
+<p style="color:var(--mint);font-weight:700;margin-bottom:6px;">Формула John Rush адаптированная под нас:</p>
+<p>1. Запустить <strong>geoseo</strong> (= его SEOBot) — open source для авторитета<br>
+2. Все проекты ссылаются друг на друга (= его 24 проекта)<br>
+3. <strong>Twitter build in public</strong> (= его 200K followers канал)<br>
+4. <strong>Reddit</strong> = взрывной канал (у него: 0.7 → 7000 посетителей/день)<br>
+5. <strong>Product Hunt</strong> = разовый буст<br>
+6. Платная реклама = НЕТ (у него провалилась тоже)</p>
+</div>
+</div>
+
+<!-- ============================= -->
+<h2>5. Российский рынок — стратегия</h2>
+
+<div class="card">
+<h3 style="color:var(--purple);">Цель: первый GEO-инструмент для Яндекс Нейро</h3>
+
+<table>
+<tr><th>Канал</th><th>Что делать</th><th>Частота</th><th>Ожидание</th></tr>
+<tr><td style="font-weight:600;">vc.ru</td><td>"Open-source GEO-аудит для Яндекс Нейро"</td><td>1 статья/2 нед</td><td>5-20K просмотров</td></tr>
+<tr><td style="font-weight:600;">Habr</td><td>Техническая статья про архитектуру</td><td>1 статья</td><td>Dev аудитория</td></tr>
+<tr><td style="font-weight:600;">Telegram SEO чаты</td><td>Посты в 5-10 чатов</td><td>Launch + 1/мес</td><td>Прямые лиды</td></tr>
+<tr><td style="font-weight:600;">ЮKassa</td><td>Оплата в рублях через ИП</td><td>Одноразово</td><td>РФ клиенты</td></tr>
+<tr><td style="font-weight:600;">Pay-per-use модель</td><td>50₽/аудит (как Topvisor)</td><td>Тариф</td><td>Привычная модель для РФ</td></tr>
+<tr><td style="font-weight:600;">Яндекс Нейро модуль</td><td>"Ответ в первом экране", E-E-A-T</td><td>Одноразово</td><td>Уникальная фича</td></tr>
+</table>
+
+<div class="hl">
+<p style="color:var(--purple);font-weight:700;margin-bottom:6px;">Почему РФ — blue ocean:</p>
+<p>• Ноль западных GEO-инструментов трекают Яндекс Нейро<br>
+• Topvisor добавил AI Tracker, но это только трекинг упоминаний<br>
+• Полного GEO-аудита с Яндекс Нейро проверками — <strong>нет ни у кого</strong><br>
+• РФ SEO-шники привыкли к pay-per-use (Topvisor модель)<br>
+• vc.ru = мощный канал для launch (не нужна аудитория)</p>
+</div>
+</div>
+
+<!-- ============================= -->
+<h2>6. Индонезийский рынок — стратегия</h2>
+
+<div class="card">
+<h3 style="color:var(--orange);">Цель: IndoGig + GEO-услуги для Бали бизнесов</h3>
+
+<table>
+<tr><th>Канал</th><th>Что делать</th><th>Для чего</th></tr>
+<tr><td style="font-weight:600;">Google Business</td><td>PT INDOGIG профиль на Бали</td><td>Local SEO + AI сигнал</td></tr>
+<tr><td style="font-weight:600;">LinkedIn</td><td>Посты о Bali hospitality staffing</td><td>B2B лиды</td></tr>
+<tr><td style="font-weight:600;">DailySocial / Tech in Asia</td><td>PR-статья о стаффинге</td><td>Brand mentions</td></tr>
+<tr><td style="font-weight:600;">WhatsApp MVP</td><td>Бот для отелей и воркеров</td><td>Основной продукт</td></tr>
+<tr><td style="font-weight:600;">FB Ads (Bahasa)</td><td>HIRE и KERJA кампании</td><td>$50 тест</td></tr>
+<tr><td style="font-weight:600;">geoseo для клиентов</td><td>Аудит сайтов Бали бизнесов</td><td>Доп. доход</td></tr>
+</table>
+</div>
+
+<!-- ============================= -->
+<h2>7. Entity Graph — как AI связывает всё в одного человека</h2>
+
+<div class="card">
+<p style="color:var(--text);">AI строит "карту знаний" по имени. Чем больше связей — тем увереннее AI что ты реальный эксперт.</p>
+
+<table>
+<tr><th>Платформа</th><th>Имя</th><th>Связь с проектами</th></tr>
+<tr><td>LinkedIn</td><td>Sergei Krushinskikh</td><td>Founder @ IndoGig, Building geoseo.today</td></tr>
+<tr><td>GitHub</td><td>sergeifounder</td><td>Author of geoseo-today, 300+ stars</td></tr>
+<tr><td>Twitter</td><td>@sergeifounder</td><td>Building @geoseo_today + @IndoGigHQ</td></tr>
+<tr><td>geoseo.today</td><td>Built by Sergei Krushinskikh</td><td>Link to sergeifounder.com</td></tr>
+<tr><td>indogig.com</td><td>Founded by Sergei Krushinskikh</td><td>Link to sergeifounder.com</td></tr>
+<tr><td>rosspaintinggroup.com</td><td>Website by sergeifounder.com</td><td>Client portfolio</td></tr>
+<tr><td>dev.to</td><td>Sergei Krushinskikh</td><td>Articles about GEO</td></tr>
+<tr><td>vc.ru</td><td>Сергей Крушинских</td><td>Статьи о GEO + Яндекс Нейро</td></tr>
+<tr><td>Product Hunt</td><td>Sergei Krushinskikh</td><td>Maker of geoseo.today</td></tr>
+</table>
+
+<p style="color:var(--mint);margin-top:12px;font-weight:600;">ВАЖНО: одинаковое имя ВЕЗДЕ. Не "Sergei K." и не "S. Krushinskikh". AI связывает entity по точному совпадению.</p>
+</div>
+
+<div class="hl">
+<p style="color:var(--text);font-weight:700;margin-bottom:6px;">Что AI видит когда кто-то спросит "Who built geoseo.today?":</p>
+<p style="font-size:0.82rem;">
+1. geoseo.today → "Built by Sergei Krushinskikh" ✓<br>
+2. GitHub sergeifounder → "Author of geoseo-today" ✓<br>
+3. LinkedIn → "Founder @ IndoGig, Building geoseo.today" ✓<br>
+4. dev.to → статья "How I built GEO engine" ✓<br>
+5. Product Hunt → "Maker: Sergei Krushinskikh" ✓<br><br>
+<strong style="color:var(--mint);">5 независимых источников = AI уверен что Sergei реальный → цитирует с доверием</strong>
+</p>
+</div>
+
+<!-- ============================= -->
+<h2>8. Schema JSON-LD — как связать проекты технически</h2>
+
+<div class="card">
+<p>На каждом сайте должен быть Person schema:</p>
+<pre style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px;font-size:0.72rem;color:var(--cyan);overflow-x:auto;white-space:pre-wrap;">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sergei Krushinskikh",
+  "url": "https://sergeifounder.com",
+  "sameAs": [
+    "https://github.com/sergeifounder",
+    "https://linkedin.com/in/sergei-krushinskikh",
+    "https://twitter.com/sergeifounder",
+    "https://x.com/sergeifounder"
+  ],
+  "jobTitle": "Founder",
+  "worksFor": [
+    {"@type": "Organization", "name": "IndoGig", "url": "https://indogig.com"},
+    {"@type": "Organization", "name": "geoseo.today", "url": "https://geoseo.today"}
+  ],
+  "knowsAbout": ["SEO", "GEO", "AI Search Optimization", "Staffing", "Web Development"]
+}
+</pre>
+<p style="margin-top:8px;color:var(--text3);font-size:0.75rem;">Этот JSON-LD вставить на: geoseo.today, indogig.com, sergeifounder.com, rosspaintinggroup.com (в footer/about)</p>
+</div>
+
+<!-- ============================= -->
+<h2>9. Контент-план на 30 дней (3 рынка)</h2>
+
+<div class="card">
+<h3>Неделя 1 (Launch)</h3>
+<table>
+<tr><th>День</th><th>EN (Global)</th><th>RU (Россия)</th><th>ID (Индонезия)</th></tr>
+<tr><td>Пн</td><td>GitHub public + Telegram SEO чаты</td><td>Telegram SEO чаты</td><td>—</td></tr>
+<tr><td>Вт</td><td>HN "Show HN" + Reddit (3 суба)</td><td>—</td><td>—</td></tr>
+<tr><td>Ср</td><td>Product Hunt + dev.to</td><td>vc.ru статья</td><td>—</td></tr>
+<tr><td>Чт</td><td>Twitter thread + LinkedIn</td><td>—</td><td>LinkedIn пост о Бали</td></tr>
+<tr><td>Пт</td><td>DM 10 исследователям</td><td>Habr статья</td><td>—</td></tr>
+</table>
+
+<h3>Неделя 2-4 (Sustain)</h3>
+<table>
+<tr><th>Канал</th><th>Частота</th><th>Тип контента</th></tr>
+<tr><td>Twitter @geoseo_today</td><td>1/день</td><td>"Did you know?" факты из research, tips, before/after</td></tr>
+<tr><td>Twitter @sergeifounder</td><td>3/неделю</td><td>Build in public: "Day X of building geoseo"</td></tr>
+<tr><td>dev.to</td><td>1/неделю</td><td>Technical deep dives</td></tr>
+<tr><td>LinkedIn</td><td>1/неделю</td><td>Founder insights, IndoGig updates</td></tr>
+<tr><td>vc.ru</td><td>1/2 нед</td><td>GEO для Яндекс Нейро, кейсы</td></tr>
+<tr><td>YouTube</td><td>1-2/мес</td><td>Tool demos, "How GEO works"</td></tr>
+</table>
+</div>
+
+<!-- ============================= -->
+<h2>10. Как John Rush адаптировать под себя</h2>
+
+<div class="card">
+<table>
+<tr><th>John Rush делает</th><th>Ты делаешь</th></tr>
+<tr><td>24 проекта линкуют друг на друга</td><td>6 проектов: geoseo ↔ IndoGig ↔ sergeifounder ↔ клиенты</td></tr>
+<tr><td>SEOBot пишет статьи для своих сайтов</td><td>geoseo аудитит свои сайты + кейсы → контент</td></tr>
+<tr><td>ListingBott размещает в каталогах</td><td>Вручную: Product Hunt, dev.to, IndieHackers, Awesome lists</td></tr>
+<tr><td>200K Twitter followers</td><td>Build in public с 0: "Day 1 of building..."</td></tr>
+<tr><td>Reddit viral post (0→7000/day)</td><td>Запланировано в launch playbook</td></tr>
+<tr><td>Прозрачность = доверие</td><td>Share numbers: stars, users, revenue</td></tr>
+<tr><td>Affiliate программа</td><td>Позже, когда будут платящие</td></tr>
+<tr><td>Cross-promotion через footer</td><td>"Built by sergeifounder.com" на каждом проекте</td></tr>
+<tr><td>Dogfooding (11 SaaS)</td><td>Dogfooding (6 сайтов на мониторинге)</td></tr>
+<tr><td>Paid ads = ПРОВАЛ</td><td>Не тратить на ads. Organic only.</td></tr>
+</table>
+</div>
+
+<!-- ============================= -->
+<h2>11. Первые 5 действий (прямо сейчас)</h2>
+
+<div class="hl">
+<ol style="font-size:0.84rem;color:var(--text);">
+<li style="padding:6px 0;"><strong>Опубликовать geoseo на GitHub</strong> (repo public) → запустить HN/Reddit<br><span style="color:var(--text3);">Время: 1 день. Эффект: 100-500 stars, авторитет, лиды</span></li>
+<li style="padding:6px 0;"><strong>Обновить LinkedIn</strong> — headline + about + featured links на geoseo + IndoGig<br><span style="color:var(--text3);">Время: 15 мин. Эффект: AI entity signal</span></li>
+<li style="padding:6px 0;"><strong>Добавить Person schema</strong> на geoseo.today + indogig.com<br><span style="color:var(--text3);">Время: 10 мин. Эффект: AI связывает проекты</span></li>
+<li style="padding:6px 0;"><strong>"Built by sergeifounder.com"</strong> в footer каждого проекта<br><span style="color:var(--text3);">Время: 5 мин на сайт. Эффект: cross-promotion + brand mentions</span></li>
+<li style="padding:6px 0;"><strong>Первый Twitter пост</strong> — "Day 1: I'm open-sourcing geoseo.today — evidence-based GEO audit"<br><span style="color:var(--text3);">Время: 5 мин. Эффект: начало build in public</span></li>
+</ol>
+</div>
+
+<div style="text-align:center;margin-top:40px;padding:20px;font-size:0.68rem;color:var(--text3);font-family:'JetBrains Mono',monospace;">
+  На основе: John Rush $300K ARR strategy, Ahrefs 75K brands study, Princeton KDD 2024<br>
+  Обновлено: 6 июня 2026
+</div>
+
+</body>
+</html>

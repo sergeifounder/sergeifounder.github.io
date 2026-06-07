@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sergei Krushinskikh — I build digital products and companies</title>
-<meta name="description" content="Founder of GeoSEO and IndoGig. Building digital products, AI automation, and SaaS. Technical partner for startups. Based in Bali, building globally.">
+<title>Sergei Krushinskikh — I build internet businesses</title>
+<meta name="description" content="Founder of GeoSEO and IndoGig. Building AI products, SaaS, and workforce infrastructure. Technical partner for startups. Based in Bali, building globally.">
 <meta name="author" content="Sergei Krushinskikh">
-<meta property="og:title" content="Sergei Krushinskikh — I build digital products and companies">
+<meta property="og:title" content="Sergei Krushinskikh — I build internet businesses">
 <meta property="og:description" content="Founder of GeoSEO and IndoGig. Technical partner for startups. AI products, SaaS, automation. Based in Bali.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://sergeifounder.com">
@@ -49,10 +49,8 @@ a { color: inherit; text-decoration: none; }
 .nav-links a:hover { color: var(--cyan); }
 .nav.light .nav-links a { color: var(--text-muted); }
 .nav.light .nav-links a:hover { color: var(--cyan); }
-.nav-cta { background: var(--cyan); color: var(--bg); padding: 8px 20px; border-radius: 6px; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; }
-.nav-cta:hover { opacity: 0.85; color: var(--bg); }
-.nav.light .nav-cta { background: var(--bg); color: var(--white); }
-.nav.light .nav-cta:hover { opacity: 0.85; color: var(--white); }
+.nav-cta { background: var(--cyan); color: var(--bg); padding: 8px 20px; border-radius: 6px; font-size: 0.82rem; font-weight: 600; transition: opacity 0.2s; }
+.nav-cta:hover { opacity: 0.85; }
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-cta { display: none; }
@@ -91,9 +89,8 @@ a { color: inherit; text-decoration: none; }
 /* METRICS */
 .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 48px; }
 @media (max-width: 768px) { .metrics { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
-.metric-num { font-family: 'JetBrains Mono', monospace; font-size: 1.8rem; font-weight: 700; color: var(--cyan); white-space: nowrap; }
-.metric-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 500; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
-@media (max-width: 768px) { .metric-num { font-size: 1.3rem; } }
+.metric-num { font-family: 'JetBrains Mono', monospace; font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 700; color: var(--cyan); display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.metric-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; display: block; }
 
 /* SECTIONS */
 .section-light { background: var(--white); color: var(--text-dark); padding: 120px max(2rem, 5vw); }
@@ -182,7 +179,7 @@ a { color: inherit; text-decoration: none; }
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Sergei Krushinskikh","url":"https://sergeifounder.com","image":"https://sergeifounder.com/hero.jpg","jobTitle":"Founder","description":"I build digital products and companies. Founder of GeoSEO and IndoGig. Technical partner for startups.","alumniOf":[{"@type":"University","name":"Moscow State University","alternateName":"MSU"},{"@type":"University","name":"Bauman Moscow State Technical University"}],"knowsAbout":["SEO","GEO","Generative Engine Optimization","Web Development","AI Search Optimization","Staffing","Python","FastAPI"],"sameAs":["https://github.com/sergeifounder","https://linkedin.com/in/sergei-krushinskikh","https://twitter.com/sergeifounder","https://geoseo.today","https://indogig.com"],"worksFor":{"@type":"Organization","name":"IndoGig","url":"https://indogig.com"},"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Web Development + SEO/GEO","description":"Full-cycle website development with SEO and GEO optimization for AI search visibility"}}]}
+{"@context":"https://schema.org","@type":"Person","name":"Sergei Krushinskikh","url":"https://sergeifounder.com","image":"https://sergeifounder.com/hero.jpg","jobTitle":"Founder","description":"I build internet businesses. Founder of GeoSEO and IndoGig. Technical partner for startups.","alumniOf":[{"@type":"University","name":"Moscow State University","alternateName":"MSU"},{"@type":"University","name":"Bauman Moscow State Technical University"}],"knowsAbout":["SEO","GEO","Generative Engine Optimization","Web Development","AI Search Optimization","Staffing","Python","FastAPI"],"sameAs":["https://github.com/sergeifounder","https://linkedin.com/in/sergei-krushinskikh","https://twitter.com/sergeifounder","https://geoseo.today","https://indogig.com"],"worksFor":{"@type":"Organization","name":"IndoGig","url":"https://indogig.com"},"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Web Development + SEO/GEO","description":"Full-cycle website development with SEO and GEO optimization for AI search visibility"}}]}
 </script>
 </head>
 <body>
@@ -192,6 +189,7 @@ a { color: inherit; text-decoration: none; }
   <a class="nav-name" href="/">Sergei Krushinskikh</a>
   <div class="nav-links">
     <a href="#projects">Projects</a>
+    <a href="#case-studies">Case Studies</a>
     <a href="#about">About</a>
     <a href="#contact" class="nav-cta">Hire Me</a>
   </div>
@@ -201,6 +199,7 @@ a { color: inherit; text-decoration: none; }
 </nav>
 <div class="mobile-menu" id="mobile-menu">
   <a href="#projects" onclick="this.parentElement.classList.remove('open')">Projects</a>
+  <a href="#case-studies" onclick="this.parentElement.classList.remove('open')">Case Studies</a>
   <a href="#about" onclick="this.parentElement.classList.remove('open')">About</a>
   <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
 </div>
@@ -217,7 +216,7 @@ a { color: inherit; text-decoration: none; }
     <div class="hero-text">
       <span class="hero-label">Founder & Builder</span>
       <h1>Sergei Krushinskikh</h1>
-      <p class="hero-tagline">I build digital products and companies. Currently building GeoSEO and IndoGig. Helping founders ship products with AI.</p>
+      <p class="hero-tagline">I build internet businesses. Currently building GeoSEO and IndoGig while helping founders launch products, automate operations, and grow with AI.</p>
       <div class="socials">
         <a class="social-btn" href="https://github.com/sergeifounder" target="_blank" rel="noopener" title="GitHub">GH</a>
         <a class="social-btn" href="https://linkedin.com/in/sergei-krushinskikh" target="_blank" rel="noopener" title="LinkedIn">LI</a>
@@ -227,10 +226,10 @@ a { color: inherit; text-decoration: none; }
       </div>
     </div>
     <div class="metrics">
-      <div><span class="metric-num">10+</span><span class="metric-label">Products Shipped</span></div>
-      <div><span class="metric-num">2</span><span class="metric-label">Companies Founded</span></div>
+      <div><span class="metric-num">10+</span><span class="metric-label">Products Built</span></div>
+      <div><span class="metric-num">2</span><span class="metric-label">Companies</span></div>
       <div><span class="metric-num">Bali</span><span class="metric-label">Based Globally</span></div>
-      <div><span class="metric-num">Full Stack</span><span class="metric-label">AI &bull; SaaS &bull; Automation</span></div>
+      <div><span class="metric-num">AI + SEO</span><span class="metric-label">SaaS &bull; GEO</span></div>
     </div>
   </div>
 </section>
@@ -253,7 +252,7 @@ a { color: inherit; text-decoration: none; }
       </div>
       <div class="project-card indo">
         <div>
-          <div class="card-label">Hospitality Staffing</div>
+          <div class="card-label">Workforce Infrastructure</div>
           <div class="card-title">IndoGig</div>
           <p class="card-desc">Connecting businesses with verified temporary workers through a flexible staffing platform. Building the future of shift-based staffing in Indonesia.</p>
         </div>
@@ -271,15 +270,61 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
+<!-- CASE STUDIES -->
+<section class="section-alt" id="case-studies">
+  <div class="section-inner">
+    <h2 class="section-title">Client Projects</h2>
+    <p style="font-size:1rem;color:var(--text-muted);margin-bottom:32px;max-width:600px">Over the past several years I have helped founders and businesses launch SaaS products, marketplaces, internal platforms, and automation systems.</p>
+    <div class="case-card">
+      <div class="case-content">
+        <div class="case-header">
+          <div>
+            <div class="case-title">Ross Painting Group</div>
+            <div class="case-location">San Diego &rarr; Los Angeles &rarr; Orange County</div>
+          </div>
+        </div>
+        <div class="case-problem">
+          <div class="case-problem-label">Problem</div>
+          <div class="case-problem-text">Single-page site, invisible to Google and AI search engines. Zero leads from organic or AI channels.</div>
+        </div>
+        <div class="case-stats">
+          <div class="case-stat"><span class="case-stat-num">60</span><span class="case-stat-label">Pages Built</span></div>
+          <div class="case-stat"><span class="case-stat-num">18</span><span class="case-stat-label">Neighborhoods</span></div>
+          <div class="case-stat"><span class="case-stat-num">3</span><span class="case-stat-label">Regions</span></div>
+          <div class="case-stat"><span class="case-stat-num">100%</span><span class="case-stat-label">Schema Coverage</span></div>
+        </div>
+        <div class="case-result">
+          <div class="case-result-label">Result — Month 1</div>
+          <div class="case-result-text">6 leads from AI search (ChatGPT, Perplexity) — before Google fully indexed the site. llms.txt + AI-optimized robots.txt made the site visible to AI bots from day one.</div>
+        </div>
+        <div class="case-tags">
+          <span class="case-tag">#WordPress</span>
+          <span class="case-tag">#JSON-LD</span>
+          <span class="case-tag">#FAQ Schema</span>
+          <span class="case-tag">#Multi-region SEO</span>
+          <span class="case-tag">#GEO</span>
+          <span class="case-tag">#llms.txt</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:12px">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--text-muted);padding:8px 16px;border:1px solid var(--border-light);border-radius:6px">Ross Painting Group</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--text-muted);padding:8px 16px;border:1px solid var(--border-light);border-radius:6px">Bros Platform</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--text-muted);padding:8px 16px;border:1px solid var(--border-light);border-radius:6px">ContentDecode</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--text-muted);padding:8px 16px;border:1px solid var(--border-light);border-radius:6px">AI &amp; Automation Solutions</span>
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section class="section-light" id="about">
   <div class="section-inner" style="max-width:800px">
     <h2 class="section-title">Background</h2>
     <div class="about-lines">
-      <div class="about-line"><span class="about-num">01</span><p class="about-text"><strong>Innovation Management</strong> — Bauman Moscow State Technical University. <strong>Economics</strong> — Lomonosov Moscow State University.</p></div>
-      <div class="about-line"><span class="about-num">02</span><p class="about-text"><strong>10 years</strong> building digital products — from marketing and no-code to full-stack development and AI.</p></div>
-      <div class="about-line"><span class="about-num">03</span><p class="about-text">Founder of <strong>IndoGig</strong> and <strong>GeoSEO</strong>. Building companies from zero to launch.</p></div>
-      <div class="about-line"><span class="about-num">04</span><p class="about-text">Clients in the <strong>US, Indonesia, and Russia</strong>. Based in <strong>Bali</strong>, building globally.</p></div>
+      <div class="about-line"><span class="about-num">01</span><p class="about-text"><strong>Innovation Management</strong> — Bauman Moscow State Technical University. <strong>Economics</strong> — Moscow State University.</p></div>
+      <div class="about-line"><span class="about-num">02</span><p class="about-text">Built <strong>10+ products</strong> across the US, Indonesia, and Russia. Web applications, SaaS, marketplaces, internal tools, and automation systems.</p></div>
+      <div class="about-line"><span class="about-num">03</span><p class="about-text">Founder of <strong>GeoSEO</strong> and <strong>IndoGig</strong>. Building internet businesses from idea to launch and growth.</p></div>
+      <div class="about-line"><span class="about-num">04</span><p class="about-text">Based in <strong>Bali, Indonesia</strong>. Building globally.</p></div>
     </div>
   </div>
 </section>

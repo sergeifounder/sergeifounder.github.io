@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO/AEO Market — Конкурентный анализ для geoseo.today</title>
+<meta name="robots" content="noindex">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  :root { --bg:#0a0a0a; --surface:#141414; --border:rgba(255,255,255,0.06); --mint:#2dd4a0; --cyan:#22d3ee; --purple:#a78bfa; --orange:#fb923c; --red:#f87171; --yellow:#fbbf24; --blue:#60a5fa; --pink:#f472b6; --text:#fff; --text2:#8c8c8c; --text3:#595959; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.7; padding:20px; max-width:900px; margin:0 auto; font-size:15px; }
+  h1 { font-size:1.6rem; font-weight:900; margin-bottom:4px; background:linear-gradient(135deg,var(--mint),var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  h2 { font-size:1.15rem; font-weight:800; margin:36px 0 14px; padding-top:20px; border-top:1px solid var(--border); }
+  h3 { font-size:0.95rem; font-weight:700; margin:16px 0 8px; color:var(--cyan); }
+  p, li { font-size:0.84rem; color:var(--text2); margin-bottom:8px; }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px; margin-bottom:16px; }
+  .hl { background:rgba(45,212,160,0.08); border:1px solid rgba(45,212,160,0.2); border-radius:12px; padding:16px; margin:16px 0; }
+  .warn { background:rgba(248,113,113,0.08); border:1px solid rgba(248,113,113,0.2); border-radius:12px; padding:16px; margin:16px 0; }
+  table { width:100%; border-collapse:collapse; font-size:0.78rem; margin:12px 0; }
+  th { text-align:left; padding:8px; color:var(--text3); font-family:'JetBrains Mono',monospace; font-size:0.68rem; border-bottom:1px solid var(--border); }
+  td { padding:8px; color:var(--text2); border-bottom:1px solid var(--border); vertical-align:top; }
+  a { color:var(--mint); text-decoration:none; }
+  .nav { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
+  .nav a { background:rgba(45,212,160,0.1); padding:6px 12px; border-radius:8px; font-size:0.72rem; font-weight:600; }
+  .tag { font-family:'JetBrains Mono',monospace; font-size:0.6rem; padding:2px 8px; border-radius:4px; display:inline-block; margin:2px; }
+  .t-green { background:rgba(45,212,160,0.15); color:var(--mint); }
+  .t-red { background:rgba(248,113,113,0.15); color:var(--red); }
+  .t-yellow { background:rgba(251,191,36,0.15); color:var(--yellow); }
+  .t-blue { background:rgba(96,165,250,0.15); color:var(--blue); }
+  .t-purple { background:rgba(167,139,250,0.15); color:var(--purple); }
+  .metric { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid var(--border); font-size:0.8rem; }
+  .metric:last-child { border:none; }
+  .metric .val { font-family:'JetBrains Mono',monospace; font-weight:600; color:var(--mint); }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="/plan.html">План</a>
+  <a href="/ecosystem.html">Экосистема</a>
+  <a href="/geo-deep.html">GEO Гид</a>
+  <a href="/competitors.html" style="background:var(--mint);color:var(--bg);">Конкуренты</a>
+</div>
+
+<h1>GEO/AEO Рынок — Полный конкурентный анализ</h1>
+<p style="color:var(--text3);font-size:0.78rem;">Все игроки, их стратегии, доходы, слабости. Где geoseo.today и как победить.</p>
+
+<!-- ==================== -->
+<h2>1. Карта рынка — кто где</h2>
+
+<div class="card">
+<table>
+<tr><th>Tier</th><th>Игрок</th><th>Тип</th><th>Цена</th><th>MRR/ARR</th><th>Funding</th></tr>
+<tr style="background:rgba(248,113,113,0.05);">
+  <td rowspan="3"><strong>Enterprise</strong></td>
+  <td><strong>Profound</strong></td><td>SaaS Platform</td><td>$499-1499/мес</td><td>~$2M ARR (est)</td><td style="color:var(--red);">$58.5M (Sequoia)</td>
+</tr>
+<tr style="background:rgba(248,113,113,0.05);"><td><strong>Pixis Visibility</strong></td><td>SaaS Platform</td><td>$200+/мес</td><td>$57.9M revenue (company)</td><td style="color:var(--red);">$209M (SoftBank)</td></tr>
+<tr style="background:rgba(248,113,113,0.05);"><td><strong>BrightEdge</strong></td><td>Enterprise Platform</td><td>$10K+/год</td><td>Established</td><td>Established</td></tr>
+<tr style="background:rgba(251,146,60,0.05);">
+  <td rowspan="2"><strong>Agency</strong></td>
+  <td><strong>AEO Engine</strong></td><td>Managed Service</td><td>$1,597-2,997/мес</td><td>$700K+ ARR (5 мес)</td><td>$0 (bootstrap)</td>
+</tr>
+<tr style="background:rgba(251,146,60,0.05);"><td><strong>Otterly.AI</strong></td><td>SaaS + Agency</td><td>$29+/мес</td><td>Unknown</td><td>Unknown</td></tr>
+<tr style="background:rgba(34,211,238,0.05);">
+  <td rowspan="4"><strong>Mid-Market SaaS</strong></td>
+  <td><strong>SEOBot</strong></td><td>Content Autopilot</td><td>$49/мес</td><td>$25K MRR</td><td>$0 (bootstrap)</td>
+</tr>
+<tr style="background:rgba(34,211,238,0.05);"><td><strong>RankPill</strong></td><td>Content Autopilot</td><td>$99/мес</td><td>$42K MRR</td><td>$0 (bootstrap)</td></tr>
+<tr style="background:rgba(34,211,238,0.05);"><td><strong>Peec AI</strong></td><td>AI Tracker</td><td>€75-89/мес</td><td>Unknown</td><td>Unknown</td></tr>
+<tr style="background:rgba(34,211,238,0.05);"><td><strong>ZipTie</strong></td><td>AI Tracker</td><td>$69/мес</td><td>Unknown</td><td>Unknown</td></tr>
+<tr style="background:rgba(45,212,160,0.05);">
+  <td rowspan="3"><strong>Free / Open Source</strong></td>
+  <td><strong style="color:var(--mint);">geoseo.today</strong></td><td>Audit + SaaS</td><td style="color:var(--mint);">Бесплатно</td><td>$0 (pre-launch)</td><td>$0</td>
+</tr>
+<tr style="background:rgba(45,212,160,0.05);"><td>GEO Optimizer</td><td>CLI Audit</td><td>Free (MIT)</td><td>$0</td><td>$0</td></tr>
+<tr style="background:rgba(45,212,160,0.05);"><td>HubSpot Grader</td><td>Free Audit</td><td>Free</td><td>CRM upsell</td><td>Public company</td></tr>
+</table>
+</div>
+
+<!-- ==================== -->
+<h2>2. Детальные профили конкурентов</h2>
+
+<!-- PROFOUND -->
+<div class="card" style="border-left:3px solid var(--red);">
+<h3 style="color:var(--red);">Profound.ai — Enterprise Leader</h3>
+<div class="metric"><span>Funding</span><span class="val" style="color:var(--red);">$58.5M (Sequoia, a16z)</span></div>
+<div class="metric"><span>Цена</span><span class="val">$499-1499/мес</span></div>
+<div class="metric"><span>Клиенты</span><span class="val">MongoDB, Figma, DocuSign, Ramp</span></div>
+<div class="metric"><span>Основатель</span><span class="val">Dylan Babbs (ex-Uber)</span></div>
+<div class="metric"><span>LLM покрытие</span><span class="val">10+ (ChatGPT, Claude, Gemini, Grok, Rufus)</span></div>
+<div class="metric"><span>Ключевая фича</span><span class="val">AI-агенты пишут и публикуют контент</span></div>
+<p style="margin-top:12px;"><strong>Стратегия:</strong> Enterprise sales-led. Демо через менеджеров. SOC 2, HIPAA. Самые глубокие данные (26M промптов).</p>
+<p><strong>Слабость:</strong> Дорого. Не для SMB. Чёрный ящик.</p>
+<p><span class="tag t-red">не наш конкурент</span> <span class="tag t-purple">другая лига</span></p>
+</div>
+
+<!-- PIXIS -->
+<div class="card" style="border-left:3px solid var(--red);">
+<h3 style="color:var(--red);">Pixis Visibility — VC-Funded Platform</h3>
+<div class="metric"><span>Funding</span><span class="val" style="color:var(--red);">$209M (SoftBank, General Atlantic)</span></div>
+<div class="metric"><span>Revenue (вся компания)</span><span class="val">$57.9M (2025)</span></div>
+<div class="metric"><span>Команда</span><span class="val">526 человек</span></div>
+<div class="metric"><span>Цена</span><span class="val">от $200/мес</span></div>
+<div class="metric"><span>Клиенты</span><span class="val">DHL, HelloFresh, Allbirds, 200+</span></div>
+<div class="metric"><span>Основатели</span><span class="val">Shubham Mishra, Neel Pandya</span></div>
+<p style="margin-top:12px;"><strong>Что делает:</strong> AI marketing platform (ads + SEO + GEO). Visibility = новый модуль для AI search tracking + content publishing. WordPress интеграция. Competitor benchmarking.</p>
+<p><strong>Стратегия:</strong> Upsell в существующую базу 200+ клиентов. Facebook/Instagram Ads (APAC фокус). Comparison pages vs Profound, vs Bluefish, vs AirOps.</p>
+<p><strong>Слабость:</strong> GEO = один модуль из многих (не core focus). Дорого. Enterprise-only. Нет open source.</p>
+<p><span class="tag t-red">не наш конкурент</span> <span class="tag t-purple">$209M funding</span></p>
+</div>
+
+<!-- AEO ENGINE -->
+<div class="card" style="border-left:3px solid var(--orange);">
+<h3 style="color:var(--orange);">AEO Engine — Managed Service Agency</h3>
+<div class="metric"><span>ARR</span><span class="val" style="color:var(--orange);">$700K+ (5 месяцев)</span></div>
+<div class="metric"><span>Цена</span><span class="val">$1,597-2,997/мес</span></div>
+<div class="metric"><span>Клиенты</span><span class="val">50+ (Amazon brands)</span></div>
+<div class="metric"><span>Основатели</span><span class="val">Vijay Jacob + Dan Ashburn (Titan Network)</span></div>
+<div class="metric"><span>Секрет роста</span><span class="val">700+ тёплых лидов из Titan Network</span></div>
+<p style="margin-top:12px;"><strong>Что делают за $1,597:</strong> 30 AI-статей/мес + 3-5 бэклинков + Reddit/Quora seeding + schema + мониторинг 150 промптов.</p>
+<p><strong>Маркетинг:</strong> 119 блог-постов за 4 мес (AI), 120+ подкастов (AI-ведущая), 9 free tools, 25 comparison pages, самоназванный "#1 AEO Consultant".</p>
+<p><strong>Слабость:</strong> 0 внешних отзывов (Trustpilot, G2, Capterra — пусто). Product Hunt провал (1 upvote). Противоречия в данных компании. Reddit seeding = этически сомнительно.</p>
+<p><span class="tag t-yellow">можно конкурировать</span> <span class="tag t-green">наш аудит дешевле в 50x</span></p>
+</div>
+
+<!-- SEOBOT -->
+<div class="card" style="border-left:3px solid var(--cyan);">
+<h3 style="color:var(--cyan);">SEOBot (John Rush) — Content Autopilot</h3>
+<div class="metric"><span>MRR</span><span class="val">~$25K ($300K ARR)</span></div>
+<div class="metric"><span>Цена</span><span class="val">$49/мес</span></div>
+<div class="metric"><span>Статей создано</span><span class="val">200,000+</span></div>
+<div class="metric"><span>Основатель</span><span class="val">John Rush (200K Twitter, 24 проекта)</span></div>
+<p style="margin-top:12px;"><strong>Стратегия роста:</strong> 24 проекта cross-promote друг друга = 30% трафика. Twitter build-in-public. Reddit (0→7000/day от 1 поста). Paid ads = провал.</p>
+<p><strong>Слабость:</strong> 0 отзывов на Capterra. Качество "иногда хуже человека" (их слова). Не аудит — только контент.</p>
+<p><span class="tag t-blue">другой продукт</span> <span class="tag t-green">стратегию можно копировать</span></p>
+</div>
+
+<!-- RANKPILL -->
+<div class="card" style="border-left:3px solid var(--cyan);">
+<h3 style="color:var(--cyan);">RankPill (Modest Mitkus) — Content Autopilot</h3>
+<div class="metric"><span>MRR</span><span class="val">$42K ($500K ARR)</span></div>
+<div class="metric"><span>Цена</span><span class="val">$99/мес</span></div>
+<div class="metric"><span>Клиенты</span><span class="val">3,000+</span></div>
+<div class="metric"><span>Путь</span><span class="val">$400/мес (2021) → $60K/мес (2026) за 3 года</span></div>
+<p style="margin-top:12px;"><strong>Стратегия:</strong> 2 года аудитория (Notion шаблоны, Twitter) → курс $35K/мес → реинвестировал в SaaS → Facebook Ads.</p>
+<p><strong>Слабость:</strong> Trustpilot — жалобы на биллинг. Scam Detector 40/100. Продукт средний, маркетинг сильный.</p>
+<p><span class="tag t-blue">другой продукт</span> <span class="tag t-green">показывает что $40K+/мес реально solo</span></p>
+</div>
+
+<!-- OTTERLY -->
+<div class="card" style="border-left:3px solid var(--purple);">
+<h3 style="color:var(--purple);">Otterly.AI — AI Tracker</h3>
+<div class="metric"><span>Цена</span><span class="val">$29+/мес</span></div>
+<div class="metric"><span>Основатель</span><span class="val">Thomas Peham (Австрия)</span></div>
+<div class="metric"><span>Статус</span><span class="val">Gartner Cool Vendor 2025</span></div>
+<div class="metric"><span>Ключевая фича</span><span class="val">1000 URL мониторинг, Brand Visibility Index</span></div>
+<p style="margin-top:12px;"><strong>Важно:</strong> Провели эксперимент доказавший что llms.txt бесполезен. Выступали на BrightonSEO. Настоящие исследования.</p>
+<p><strong>Слабость:</strong> Данные обновляются 1x/неделю. "UI was confusing" (Capterra). Только мониторинг — не чинит.</p>
+<p><span class="tag t-yellow">прямой конкурент по цене</span> <span class="tag t-green">мы аудитим, они мониторят</span></p>
+</div>
+
+<!-- GEO OPTIMIZER -->
+<div class="card" style="border-left:3px solid var(--mint);">
+<h3 style="color:var(--mint);">GEO Optimizer (Auriti-Labs) — Open Source CLI</h3>
+<div class="metric"><span>GitHub Stars</span><span class="val">454</span></div>
+<div class="metric"><span>Цена</span><span class="val">Free (MIT)</span></div>
+<div class="metric"><span>Проверок</span><span class="val">47</span></div>
+<div class="metric"><span>Проблема</span><span class="val">llms.txt = 18 баллов (!), Schema = 16 баллов</span></div>
+<p style="margin-top:12px;"><strong>Наш главный OSS конкурент.</strong> Но: CLI-only (нет web UI), нет site crawl, нет SEO (только GEO), даёт 18 баллов за llms.txt (доказано бесполезный).</p>
+<p><span class="tag t-red">прямой конкурент на GitHub</span> <span class="tag t-green">мы сильнее: web UI + SEO+GEO + evidence-based</span></p>
+</div>
+
+<!-- ==================== -->
+<h2>3. Где geoseo.today на карте</h2>
+
+<div class="hl">
+<p style="color:var(--mint);font-weight:700;font-size:0.9rem;">Наша уникальная позиция: единственный бесплатный инструмент с web UI + site crawl + SEO + GEO + evidence-based methodology</p>
+</div>
+
+<div class="card">
+<table>
+<tr><th>Что есть</th><th>У нас</th><th>Otterly $29</th><th>GEO Opt (OSS)</th><th>AEO Engine $1,597</th><th>Pixis $200+</th></tr>
+<tr><td>Web UI в браузере</td><td style="color:var(--mint);">Да</td><td style="color:var(--mint);">Да</td><td style="color:var(--red);">Нет (CLI)</td><td style="color:var(--mint);">Да</td><td style="color:var(--mint);">Да</td></tr>
+<tr><td>Site crawl (200+ стр)</td><td style="color:var(--mint);">Да</td><td style="color:var(--red);">Нет</td><td style="color:var(--red);">Нет</td><td style="color:var(--mint);">Да</td><td style="color:var(--mint);">Да</td></tr>
+<tr><td>SEO аудит</td><td style="color:var(--mint);">13 категорий</td><td style="color:var(--red);">Нет</td><td style="color:var(--red);">Нет</td><td style="color:var(--mint);">Да</td><td style="color:var(--mint);">Да</td></tr>
+<tr><td>GEO аудит</td><td style="color:var(--mint);">8 категорий</td><td style="color:var(--yellow);">Базовый</td><td style="color:var(--mint);">47 checks</td><td style="color:var(--mint);">Да</td><td style="color:var(--mint);">Да</td></tr>
+<tr><td>Evidence-based scoring</td><td style="color:var(--mint);">6 papers, A/B/C rating</td><td style="color:var(--red);">Нет</td><td style="color:var(--yellow);">Princeton only</td><td style="color:var(--red);">Нет</td><td style="color:var(--red);">Нет</td></tr>
+<tr><td>AI рекомендации</td><td style="color:var(--mint);">Gemini + 58 fix-map</td><td style="color:var(--yellow);">SWOT</td><td style="color:var(--red);">Нет</td><td style="color:var(--mint);">Да (агенты)</td><td style="color:var(--mint);">Да</td></tr>
+<tr><td>Expert quote detection</td><td style="color:var(--mint);">30+ паттернов EN/RU</td><td style="color:var(--red);">Нет</td><td style="color:var(--red);">Нет</td><td style="color:var(--red);">Нет</td><td style="color:var(--red);">Нет</td></tr>
+<tr><td>PDF/Excel экспорт</td><td style="color:var(--mint);">Да</td><td style="color:var(--yellow);">CSV</td><td style="color:var(--yellow);">JSON/HTML</td><td style="color:var(--mint);">Да</td><td style="color:var(--mint);">Да</td></tr>
+<tr><td>Open Source</td><td style="color:var(--mint);">AGPL-3.0</td><td style="color:var(--red);">Нет</td><td style="color:var(--mint);">MIT</td><td style="color:var(--red);">Нет</td><td style="color:var(--red);">Нет</td></tr>
+<tr><td>LLM rank tracking</td><td style="color:var(--red);">Нет (roadmap)</td><td style="color:var(--mint);">6 моделей</td><td style="color:var(--red);">Нет</td><td style="color:var(--mint);">Да</td><td style="color:var(--mint);">Да</td></tr>
+<tr><td>Бесплатно</td><td style="color:var(--mint);">Да</td><td style="color:var(--red);">$29+</td><td style="color:var(--mint);">Да</td><td style="color:var(--red);">$1,597</td><td style="color:var(--red);">$200+</td></tr>
+</table>
+</div>
+
+<!-- ==================== -->
+<h2>4. Рыночный gap — где мы побеждаем</h2>
+
+<div class="card">
+<pre style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--text2);overflow-x:auto;white-space:pre;">
+ЦЕНА          ПРОДУКТ
+$0         ── geoseo.today (аудит + AI recs + site crawl)     ★ МЫ ТУТ
+$29        ── Otterly (мониторинг, без аудита)
+$49        ── SEOBot (контент, без аудита)
+$69-89     ── ZipTie, Peec, BotRank (мониторинг)
+$99        ── RankPill (контент, без аудита)
+
+             ─── ПУСТОТА ($100-$500) ─── НИКОГО ───        ★ НАША ЗОНА ДЛЯ PRO
+
+$200+      ── Pixis Visibility (enterprise)
+$499+      ── Profound (enterprise)
+$1,597+    ── AEO Engine (managed service)
+$10,000+   ── BrightEdge (enterprise)
+</pre>
+<p style="color:var(--mint);margin-top:12px;font-weight:600;">Gap $100-$500 = НИКТО не занимает. geoseo Pro $29-99/мес + "fix it for me" услуги $300-500/мес = идеальная позиция.</p>
+</div>
+
+<!-- ==================== -->
+<h2>5. Как победить — стратегия</h2>
+
+<div class="card">
+<h3>Наши 5 unfair advantages</h3>
+<table>
+<tr><th>#</th><th>Преимущество</th><th>Кто ещё так делает</th></tr>
+<tr><td>1</td><td><strong>Evidence-based с source rating</strong> — каждый вес → конкретный paper (A/B/C)</td><td>Никто</td></tr>
+<tr><td>2</td><td><strong>Debunked claims</strong> — открыто говорим что llms.txt и schema НЕ работают</td><td>Никто (конкуренты дают 16-18 баллов)</td></tr>
+<tr><td>3</td><td><strong>Web UI + site crawl + SEO + GEO</strong> в одном бесплатном инструменте</td><td>Никто в open source</td></tr>
+<tr><td>4</td><td><strong>Expert quote detection</strong> — 30+ паттернов EN/RU, E-E-A-T passport</td><td>Никто</td></tr>
+<tr><td>5</td><td><strong>Actionable fixes</strong> — 58 fix-записей + Gemini рекомендации ("Now What" gap)</td><td>AEO Engine (но за $1,597)</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>Что копируем у конкурентов</h3>
+<table>
+<tr><th>У кого</th><th>Что берём</th><th>Применение</th></tr>
+<tr><td>John Rush (SEOBot)</td><td>Cross-promotion 24 проектов</td><td>geoseo ↔ IndoGig ↔ sergeifounder</td></tr>
+<tr><td>John Rush</td><td>Reddit = взрывной канал</td><td>HN + Reddit launch day</td></tr>
+<tr><td>Modest Mitkus (RankPill)</td><td>2 года аудитория → потом SaaS</td><td>GitHub stars + Twitter = аудитория</td></tr>
+<tr><td>AEO Engine</td><td>Free tools как лид-магниты</td><td>Аудит = lead magnet → services</td></tr>
+<tr><td>AEO Engine</td><td>Comparison pages (25 штук)</td><td>"geoseo vs Otterly", "vs GEO Optimizer"</td></tr>
+<tr><td>AEO Engine</td><td>llms.txt + agent-skills</td><td>Добавить на geoseo.today</td></tr>
+<tr><td>Pixis</td><td>Industry landing pages</td><td>"GEO for restaurants", "for lawyers"</td></tr>
+<tr><td>Otterly</td><td>BrightonSEO выступления + research</td><td>Наши исследования = контент</td></tr>
+</table>
+</div>
+
+<!-- ==================== -->
+<h2>6. Финансовое сравнение — кто сколько зарабатывает</h2>
+
+<div class="card">
+<table>
+<tr><th>Кто</th><th>MRR</th><th>Тип</th><th>Solo?</th><th>Время до MRR</th><th>Маркетинг</th></tr>
+<tr><td>Pixis</td><td style="color:var(--red);">$4.8M</td><td>VC-backed</td><td>526 чел</td><td>Годы</td><td>Paid + sales team</td></tr>
+<tr><td>AEO Engine</td><td style="color:var(--orange);">$58K</td><td>Agency</td><td>~5 чел</td><td>5 мес</td><td>Titan Network (warm leads)</td></tr>
+<tr><td>RankPill</td><td style="color:var(--cyan);">$42K</td><td>SaaS</td><td style="color:var(--mint);">Solo</td><td>~1 год</td><td>FB Ads + аудитория</td></tr>
+<tr><td>SEOBot</td><td style="color:var(--cyan);">$25K</td><td>SaaS</td><td style="color:var(--mint);">Solo</td><td>~1 год</td><td>Twitter 200K + 24 проекта</td></tr>
+<tr><td>Otterly</td><td>Unknown</td><td>SaaS</td><td>~10 чел</td><td>~1 год</td><td>BrightonSEO + research</td></tr>
+<tr><td style="color:var(--mint);font-weight:700;">geoseo.today</td><td>$0</td><td>SaaS + Services</td><td style="color:var(--mint);">Solo</td><td>Pre-launch</td><td>GitHub + Reddit + HN</td></tr>
+</table>
+<p style="margin-top:12px;color:var(--mint);">Solo founders (RankPill, SEOBot) = $25-42K MRR. Это наш benchmark.</p>
+</div>
+
+<!-- ==================== -->
+<h2>7. Слабости конкурентов которые мы эксплуатируем</h2>
+
+<div class="warn">
+<table>
+<tr><th>Конкурент</th><th>Слабость</th><th>Наш ответ</th></tr>
+<tr><td>Все платные</td><td>$29-1,597/мес за базовый аудит</td><td style="color:var(--mint);">Бесплатно, без регистрации</td></tr>
+<tr><td>Все SaaS</td><td>"Чёрный ящик" — непонятно откуда скоры</td><td style="color:var(--mint);">METHODOLOGY.md + source rating A/B/C/D</td></tr>
+<tr><td>GEO Optimizer</td><td>llms.txt = 18 баллов (бесполезно)</td><td style="color:var(--mint);">llms.txt = +5 bonus (OtterlyAI proof)</td></tr>
+<tr><td>GEO Optimizer</td><td>CLI only, нет web UI</td><td style="color:var(--mint);">Полный web UI в браузере</td></tr>
+<tr><td>Otterly</td><td>Только мониторинг, не говорит как чинить</td><td style="color:var(--mint);">58 fix-записей + AI recommendations</td></tr>
+<tr><td>AEO Engine</td><td>0 внешних отзывов, self-awarded #1</td><td style="color:var(--mint);">Open source + GitHub stars = честный social proof</td></tr>
+<tr><td>RankPill</td><td>Жалобы на биллинг, Scam Detector 40/100</td><td style="color:var(--mint);">Бесплатно = 0 риск</td></tr>
+<tr><td>Все</td><td>Нет expert quote detection</td><td style="color:var(--mint);">30+ паттернов EN/RU + E-E-A-T passport</td></tr>
+</table>
+</div>
+
+<div style="text-align:center;margin-top:40px;padding:20px;font-size:0.68rem;color:var(--text3);font-family:'JetBrains Mono',monospace;">
+  Обновлено: 7 июня 2026 · На основе: Ahrefs, Princeton KDD 2024, Crunchbase, Trustpilot, arrfounder.com, LinkedIn, Product Hunt
+</div>
+
+</body>
+</html>

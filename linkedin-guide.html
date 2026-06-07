@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Profile Setup Guide — Sergei Krushinskikh</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a;
+  --surface: #131313;
+  --surface-high: #1c1b1b;
+  --white: #fafafa;
+  --cyan: #22d3ee;
+  --orange: #ffb957;
+  --green: #4de082;
+  --red: #ff6b6b;
+  --text: #e5e2e1;
+  --text-muted: #8c8c8c;
+  --border: rgba(255,255,255,0.08);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+.container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 900; font-size: 2.2rem; letter-spacing: -0.03em; margin-bottom: 8px; }
+h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.02em; margin-top: 48px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+h3 { font-size: 1.1rem; font-weight: 600; margin-top: 24px; margin-bottom: 8px; }
+p { margin-bottom: 12px; }
+.subtitle { color: var(--text-muted); font-size: 1rem; margin-bottom: 40px; }
+
+.section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+.section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.section-number { background: var(--cyan); color: #000; width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; flex-shrink: 0; }
+.section-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.2rem; }
+
+.priority-critical { border-left: 3px solid var(--red); }
+.priority-high { border-left: 3px solid var(--orange); }
+.priority-medium { border-left: 3px solid var(--cyan); }
+
+.badge { display: inline-block; padding: 2px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.badge-critical { background: rgba(255,107,107,0.15); color: var(--red); }
+.badge-high { background: rgba(255,185,87,0.15); color: var(--orange); }
+.badge-medium { background: rgba(34,211,238,0.15); color: var(--cyan); }
+
+.old-new { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+@media (max-width: 600px) { .old-new { grid-template-columns: 1fr; } }
+.old { background: rgba(255,107,107,0.08); border: 1px solid rgba(255,107,107,0.2); border-radius: 8px; padding: 16px; }
+.new { background: rgba(77,224,130,0.08); border: 1px solid rgba(77,224,130,0.2); border-radius: 8px; padding: 16px; }
+.old-label, .new-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+.old-label { color: var(--red); }
+.new-label { color: var(--green); }
+
+.copy-block { background: var(--surface-high); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin: 12px 0; font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6; position: relative; white-space: pre-wrap; }
+.copy-block code { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
+.copy-hint { position: absolute; top: 8px; right: 12px; font-size: 0.7rem; color: var(--text-muted); }
+
+.steps { list-style: none; counter-reset: step; }
+.steps li { counter-increment: step; padding: 8px 0 8px 36px; position: relative; }
+.steps li::before { content: counter(step); position: absolute; left: 0; top: 8px; width: 24px; height: 24px; background: var(--surface-high); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; color: var(--cyan); }
+
+.checklist { list-style: none; }
+.checklist li { padding: 6px 0 6px 28px; position: relative; }
+.checklist li::before { content: ""; position: absolute; left: 0; top: 10px; width: 16px; height: 16px; border: 2px solid var(--border); border-radius: 4px; }
+
+.tip { background: rgba(34,211,238,0.08); border: 1px solid rgba(34,211,238,0.2); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 0.9rem; }
+.tip::before { content: "TIP: "; font-weight: 600; color: var(--cyan); }
+
+.warning { background: rgba(255,107,107,0.08); border: 1px solid rgba(255,107,107,0.2); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 0.9rem; }
+.warning::before { content: "WARNING: "; font-weight: 600; color: var(--red); }
+
+.nav-back { display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px; transition: color 0.2s; }
+.nav-back:hover { color: var(--cyan); }
+
+.progress-bar { width: 100%; background: var(--surface-high); border-radius: 8px; height: 8px; margin: 24px 0; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--cyan), var(--green)); border-radius: 8px; width: 0%; }
+
+.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
+@media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+.service-item { background: var(--surface-high); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; font-size: 0.9rem; }
+.service-item .category { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 32px; }
+.toc-title { font-weight: 600; margin-bottom: 12px; font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.toc a { display: block; padding: 4px 0; color: var(--cyan); font-size: 0.9rem; transition: opacity 0.2s; }
+.toc a:hover { opacity: 0.7; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="/" class="nav-back">&larr; sergeifounder.com</a>
+
+<h1>LinkedIn Profile Makeover</h1>
+<p class="subtitle">Полная инструкция по переупаковке профиля. Каждый шаг — что удалить, что вставить, куда нажать.</p>
+
+<div class="toc">
+  <div class="toc-title">Содержание (12 шагов)</div>
+  <a href="#step1">1. Убрать #OPENTOWORK</a>
+  <a href="#step2">2. Исправить имя</a>
+  <a href="#step3">3. Новый Headline</a>
+  <a href="#step4">4. Новый баннер</a>
+  <a href="#step5">5. Фото профиля</a>
+  <a href="#step6">6. About секция</a>
+  <a href="#step7">7. Services (Providing Services)</a>
+  <a href="#step8">8. Experience</a>
+  <a href="#step9">9. Featured секция</a>
+  <a href="#step10">10. Skills & Endorsements</a>
+  <a href="#step11">11. Education</a>
+  <a href="#step12">12. Custom URL & Contact Info</a>
+  <a href="#content">Контент-план: первые 7 постов</a>
+  <a href="#checklist">Финальный чеклист</a>
+</div>
+
+<!-- ====== STEP 1 ====== -->
+<div class="section priority-critical" id="step1">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <div class="section-title">Убрать #OPENTOWORK</div>
+    <span class="badge badge-critical">Critical</span>
+  </div>
+
+  <p>Зелёная рамка #OPENTOWORK на фото = "ищу работу". Ты founder, а не соискатель. Клиенты это видят и проходят мимо.</p>
+
+  <ol class="steps">
+    <li>Нажми на своё фото профиля</li>
+    <li>Или: нажми кнопку <strong>"Open to"</strong> под фото</li>
+    <li>Найди секцию <strong>"Open to work"</strong></li>
+    <li>Нажми <strong>"Delete"</strong> или <strong>"Remove from profile"</strong></li>
+    <li>Подтверди удаление</li>
+  </ol>
+
+  <div class="warning">Пока эта рамка висит — всё остальное бессмысленно. Это первое что видят люди.</div>
+</div>
+
+<!-- ====== STEP 2 ====== -->
+<div class="section priority-critical" id="step2">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <div class="section-title">Исправить имя</div>
+    <span class="badge badge-critical">Critical</span>
+  </div>
+
+  <div class="old-new">
+    <div class="old">
+      <div class="old-label">Сейчас</div>
+      Sergel Krushinskikh
+    </div>
+    <div class="new">
+      <div class="new-label">Нужно</div>
+      Sergei Krushinskikh
+    </div>
+  </div>
+
+  <ol class="steps">
+    <li>Нажми иконку карандаша (Edit) рядом с именем на профиле</li>
+    <li>Или: Me > View Profile > карандаш в верхней карточке</li>
+    <li>First name: <strong>Sergei</strong></li>
+    <li>Last name: <strong>Krushinskikh</strong></li>
+    <li>Pronouns: можно убрать He/Him или оставить — не критично</li>
+    <li>Сохрани</li>
+  </ol>
+</div>
+
+<!-- ====== STEP 3 ====== -->
+<div class="section priority-critical" id="step3">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <div class="section-title">Новый Headline</div>
+    <span class="badge badge-critical">Critical</span>
+  </div>
+
+  <p>Headline — самое важное после имени. Показывается в поиске, комментариях, инвайтах. Макс 220 символов.</p>
+
+  <div class="old-new">
+    <div class="old">
+      <div class="old-label">Сейчас</div>
+      Top 1% Certified Bubble Developer, CTO & CEO Indogig, No-code, AI
+    </div>
+    <div class="new">
+      <div class="new-label">Вариант 1 (рекомендую)</div>
+      Founder @ GeoSEO.today & IndoGig | I help businesses get found by ChatGPT, Perplexity & Google | SEO + AI Search (GEO) | Technical Partner for Agencies
+    </div>
+  </div>
+
+  <div class="copy-block">Founder @ GeoSEO.today & IndoGig | I help businesses get found by ChatGPT, Perplexity & Google | SEO + AI Search (GEO) | Technical Partner for Agencies</div>
+
+  <p><strong>Альтернативы (выбери что ближе):</strong></p>
+
+  <div class="copy-block"><strong>Вариант 2 (короче, punchier):</strong>
+I build tools that get businesses found by AI search | Founder @ GeoSEO.today | SEO + GEO Expert | Bali</div>
+
+  <div class="copy-block"><strong>Вариант 3 (technical partner фокус):</strong>
+Technical Partner for Marketing Agencies | SEO + AI Search Optimization | Founder @ GeoSEO.today & IndoGig | Python, AI, SaaS</div>
+
+  <ol class="steps">
+    <li>Нажми карандаш (Edit) в верхней карточке профиля</li>
+    <li>Найди поле <strong>Headline</strong></li>
+    <li>Удали старый текст, вставь новый</li>
+    <li>Сохрани</li>
+  </ol>
+</div>
+
+<!-- ====== STEP 4 ====== -->
+<div class="section priority-high" id="step4">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <div class="section-title">Новый баннер (Cover Image)</div>
+    <span class="badge badge-high">High</span>
+  </div>
+
+  <p>Текущий баннер: "Top 1% Certified Bubble Developer / CTO & CEO Indogig" — полностью устарел.</p>
+
+  <p><strong>Размер:</strong> 1584 x 396 px (рекомендация LinkedIn)</p>
+
+  <p><strong>Что должно быть на новом баннере:</strong></p>
+  <ul style="margin-left: 20px; margin-bottom: 12px;">
+    <li><strong>Текст:</strong> "I build tools that get businesses found by AI" или "SEO + AI Search Optimization"</li>
+    <li><strong>URL:</strong> sergeifounder.com</li>
+    <li><strong>Проекты:</strong> geoseo.today | IndoGig</li>
+    <li><strong>Стиль:</strong> тёмный фон (как сайт), минимализм, Space Grotesk шрифт</li>
+  </ul>
+
+  <div class="tip">Я могу сгенерировать баннер — скажи "сделай баннер" после того как закончишь остальные шаги.</div>
+
+  <ol class="steps">
+    <li>Нажми на баннер (или карандаш в правом верхнем углу баннера)</li>
+    <li>Выбери <strong>"Change photo"</strong></li>
+    <li>Загрузи новый файл (1584x396 px)</li>
+    <li>Подгони позицию и сохрани</li>
+  </ol>
+</div>
+
+<!-- ====== STEP 5 ====== -->
+<div class="section priority-medium" id="step5">
+  <div class="section-header">
+    <div class="section-number">5</div>
+    <div class="section-title">Фото профиля</div>
+    <span class="badge badge-medium">Medium</span>
+  </div>
+
+  <p>Текущее фото нормальное (профессиональное, лицо видно). Но после удаления #OPENTOWORK рамки проверь что фото выглядит чисто.</p>
+
+  <p><strong>Требования к фото:</strong></p>
+  <ul style="margin-left: 20px; margin-bottom: 12px;">
+    <li>400x400 px минимум</li>
+    <li>Лицо занимает ~60% кадра</li>
+    <li>Нейтральный или размытый фон</li>
+    <li>Без зелёных рамок, бейджей, текста</li>
+    <li>Без #OPENTOWORK — это убрали в шаге 1</li>
+  </ul>
+
+  <div class="tip">Можешь использовать то же hero.jpg с sergeifounder.com — оно качественное и профессиональное.</div>
+</div>
+
+<!-- ====== STEP 6 ====== -->
+<div class="section priority-critical" id="step6">
+  <div class="section-header">
+    <div class="section-number">6</div>
+    <div class="section-title">About секция</div>
+    <span class="badge badge-critical">Critical</span>
+  </div>
+
+  <p>Текущий About целиком про Bubble и no-code — это прошлая жизнь. Нужна полная замена. Макс 2600 символов.</p>
+
+  <div class="old-new">
+    <div class="old">
+      <div class="old-label">Сейчас (удалить полностью)</div>
+      "Passionate about harnessing the power of no-code tools... No-Code Development: Proficient in using platforms like Bubble... Startup Development... Indogig: a transformative platform designed to enhance the gig economy..."
+    </div>
+    <div class="new">
+      <div class="new-label">Новый About</div>
+      См. текст ниже
+    </div>
+  </div>
+
+  <div class="copy-block">I build tools that help businesses get found — not just on Google, but in AI search engines like ChatGPT, Perplexity, and Google AI Overviews.
+
+Most SEO tools still optimize for 2020. I'm building for 2026 — where 40% of searches never reach a website, and AI engines decide which businesses to recommend.
+
+What I'm working on:
+
+GeoSEO.today — open-source SEO + GEO (Generative Engine Optimization) audit platform. 7,500+ lines of code, 55 AI search checks, 18 audit categories. Free to use.
+
+IndoGig — workforce infrastructure for Indonesia's event and hospitality industry. PT INDOGIG registered in Bali, serving hotels and event venues.
+
+Results I can point to:
+- Ross Painting Group (San Diego): built 60 SEO pages across 18 neighborhoods. Got 6 qualified leads from AI search (ChatGPT & Perplexity) within the first month.
+- Built and shipped 10+ production apps — from SaaS platforms to Telegram bots to desktop tools.
+
+What I do for clients:
+→ SEO + GEO audits with actionable roadmaps
+→ Custom websites optimized for both traditional and AI search
+→ Technical partner services for marketing agencies (you sell, I build)
+
+Stack: Python (Flask, FastAPI), JavaScript, PostgreSQL, Railway, GitHub Actions. I write code, not prompts.
+
+Based in Bali. Working with US clients remotely.
+sergeifounder.com</div>
+
+  <ol class="steps">
+    <li>Scroll down к секции <strong>About</strong></li>
+    <li>Нажми карандаш (Edit)</li>
+    <li>Удали ВЕСЬ старый текст</li>
+    <li>Вставь новый текст из блока выше</li>
+    <li>Проверь что форматирование сохранилось (пустые строки = абзацы)</li>
+    <li>Сохрани</li>
+  </ol>
+
+  <div class="warning">LinkedIn съедает форматирование при вставке. После вставки пройдись и убедись что пустые строки между абзацами на месте.</div>
+</div>
+
+<!-- ====== STEP 7 ====== -->
+<div class="section priority-high" id="step7">
+  <div class="section-header">
+    <div class="section-number">7</div>
+    <div class="section-title">Services (Providing Services)</div>
+    <span class="badge badge-high">High</span>
+  </div>
+
+  <p>Ты открыл нужное окно. Вот что выбрать.</p>
+
+  <h3>Шаг 1: Нажми "+ Add services" и найди эти сервисы</h3>
+
+  <p>В поиске вводи названия по одному. LinkedIn предложит из своего списка — выбери ближайшее:</p>
+
+  <div class="services-grid">
+    <div class="service-item">
+      <div class="category">Information Technology</div>
+      <strong>Search Engine Optimization (SEO)</strong>
+    </div>
+    <div class="service-item">
+      <div class="category">Information Technology</div>
+      <strong>Web Development</strong>
+    </div>
+    <div class="service-item">
+      <div class="category">Information Technology</div>
+      <strong>Web Design</strong>
+    </div>
+    <div class="service-item">
+      <div class="category">Consulting</div>
+      <strong>IT Consulting</strong>
+    </div>
+    <div class="service-item">
+      <div class="category">Information Technology</div>
+      <strong>Application Development</strong>
+    </div>
+    <div class="service-item">
+      <div class="category">Information Technology</div>
+      <strong>SaaS Development</strong>
+    </div>
+  </div>
+
+  <div class="tip">Если "SaaS Development" нет в списке, ищи "Software Development" или "Application Development". Не добавляй то, что не предоставляешь (типа Accounting, Events).</div>
+
+  <h3>Шаг 2: Description (макс 500 символов)</h3>
+
+  <div class="copy-block">I help businesses get found by Google AND AI search engines (ChatGPT, Perplexity, Google AI Overviews).
+
+Services:
+→ SEO + GEO audits with actionable roadmaps
+→ Custom websites for search visibility
+→ Technical partner for marketing agencies
+
+Built geoseo.today (open-source, 55 AI checks). Case: Ross Painting Group — 6 leads from AI search in month 1.
+
+Bali-based, US clients. sergeifounder.com</div>
+
+  <h3>Шаг 3: Work location</h3>
+  <ul style="margin-left: 20px;">
+    <li>Bali — уже выбрано, ок</li>
+    <li>I am available to work remotely — уже выбрано, ок</li>
+  </ul>
+
+  <h3>Шаг 4: Нажми Publish</h3>
+</div>
+
+<!-- ====== STEP 8 ====== -->
+<div class="section priority-high" id="step8">
+  <div class="section-header">
+    <div class="section-number">8</div>
+    <div class="section-title">Experience</div>
+    <span class="badge badge-high">High</span>
+  </div>
+
+  <p>Нужно обновить/добавить позиции. Убрать устаревшее, добавить актуальное.</p>
+
+  <h3>Позиция 1 — GeoSEO.today (добавить если нет)</h3>
+  <div class="copy-block"><strong>Title:</strong> Founder
+<strong>Company:</strong> GeoSEO.today (можно создать Company Page позже)
+<strong>Employment type:</strong> Self-employed
+<strong>Location:</strong> Bali, Indonesia (Remote)
+<strong>Start date:</strong> May 2026
+<strong>End date:</strong> Present
+<strong>Description:</strong>
+Open-source SEO + GEO (Generative Engine Optimization) audit platform.
+
+Built from scratch: 7,500+ lines of Python/JS, 55 AI search checks across 18 categories. Deployed on Railway with real-time SSE streaming.
+
+GEO = optimizing for AI search engines (ChatGPT, Perplexity, Google AI Overviews). This is the next frontier after traditional SEO.
+
+Tech: Python, FastAPI, JavaScript, PostgreSQL, Railway.
+https://geoseo.today</div>
+
+  <h3>Позиция 2 — IndoGig (обновить существующую)</h3>
+  <div class="copy-block"><strong>Title:</strong> Founder & CEO
+<strong>Company:</strong> IndoGig (PT INDOGIG)
+<strong>Employment type:</strong> Self-employed
+<strong>Location:</strong> Bali, Indonesia
+<strong>Start date:</strong> оставить как есть
+<strong>End date:</strong> Present
+<strong>Description:</strong>
+Workforce infrastructure for Indonesia's event and hospitality industry.
+
+PT INDOGIG — registered Indonesian company (Bali). Connecting skilled workers with hotels, villas, and event venues.
+
+Built the tech platform, managed operations, grew to 40+ workers serving 3 recurring clients.
+
+Currently building WhatsApp-first MVP for scalable worker dispatch.</div>
+
+  <h3>Позиция 3 — Freelance / Technical Partner (добавить)</h3>
+  <div class="copy-block"><strong>Title:</strong> Technical Partner & SEO Consultant
+<strong>Company:</strong> Self-employed
+<strong>Employment type:</strong> Freelance
+<strong>Location:</strong> Remote
+<strong>Start date:</strong> January 2024
+<strong>End date:</strong> Present
+<strong>Description:</strong>
+Working with US-based businesses on SEO, web development, and AI search optimization.
+
+Key projects:
+- Ross Painting Group (San Diego): 60 SEO pages, 18 neighborhoods, 3 service regions. 6 leads from AI search in month 1.
+- Multiple WordPress and custom-code sites for service businesses.
+- SEO audits and technical implementation.
+
+sergeifounder.com</div>
+
+  <h3>Что удалить / скрыть:</h3>
+  <ul style="margin-left: 20px;">
+    <li>Любые позиции типа "Bubble Developer" или "No-code Developer" — они тянут профиль в прошлое</li>
+    <li>Если есть "Open to work" в позициях — удалить</li>
+  </ul>
+
+  <ol class="steps">
+    <li>Scroll к секции <strong>Experience</strong></li>
+    <li>Нажми <strong>"+"</strong> чтобы добавить новую позицию</li>
+    <li>Заполни поля из блоков выше</li>
+    <li>Для существующих — нажми карандаш и обнови</li>
+    <li>Старые Bubble-позиции: нажми "..." > Delete</li>
+  </ol>
+</div>
+
+<!-- ====== STEP 9 ====== -->
+<div class="section priority-high" id="step9">
+  <div class="section-header">
+    <div class="section-number">9</div>
+    <div class="section-title">Featured секция</div>
+    <span class="badge badge-high">High</span>
+  </div>
+
+  <p>Featured — это визуальная витрина под About. Сюда кладём ссылки на главные вещи.</p>
+
+  <ol class="steps">
+    <li>Если секции Featured нет: нажми <strong>"Add profile section"</strong> > <strong>"Recommended"</strong> > <strong>"Add featured"</strong></li>
+    <li>Нажми <strong>"+"</strong> в Featured секции</li>
+    <li>Выбери <strong>"Add a link"</strong></li>
+  </ol>
+
+  <h3>Ссылка 1 — sergeifounder.com</h3>
+  <div class="copy-block"><strong>URL:</strong> https://sergeifounder.com
+<strong>Title:</strong> Portfolio & Case Studies
+<strong>Description:</strong> My projects, case studies, and services. SEO + AI Search Optimization.</div>
+
+  <h3>Ссылка 2 — geoseo.today</h3>
+  <div class="copy-block"><strong>URL:</strong> https://geoseo.today
+<strong>Title:</strong> GeoSEO.today — Free SEO + GEO Audit Tool
+<strong>Description:</strong> Open-source. 55 AI search checks. See how your site performs in ChatGPT, Perplexity, and Google AI Overviews.</div>
+
+  <h3>Ссылка 3 (опционально) — GitHub</h3>
+  <div class="copy-block"><strong>URL:</strong> https://github.com/sergeifounder/geoseo-today
+<strong>Title:</strong> GeoSEO Source Code (Open Source)
+<strong>Description:</strong> 7,500+ lines. Python + JS. Full audit engine.</div>
+
+  <div class="tip">Featured показывается как карточки с превью. LinkedIn автоматически подтянет OG-image с сайтов. У sergeifounder.com уже есть hero.jpg как OG image — будет выглядеть хорошо.</div>
+</div>
+
+<!-- ====== STEP 10 ====== -->
+<div class="section priority-medium" id="step10">
+  <div class="section-header">
+    <div class="section-number">10</div>
+    <div class="section-title">Skills & Endorsements</div>
+    <span class="badge badge-medium">Medium</span>
+  </div>
+
+  <p>Удали устаревшие скиллы (Bubble, No-code) и добавь актуальные.</p>
+
+  <h3>Убрать:</h3>
+  <ul style="margin-left: 20px; margin-bottom: 12px;">
+    <li>Bubble</li>
+    <li>No-code Development</li>
+    <li>Всё что связано с Bubble/Webflow/no-code</li>
+  </ul>
+
+  <h3>Добавить (в порядке приоритета):</h3>
+  <ul style="margin-left: 20px; margin-bottom: 12px;">
+    <li><strong>Search Engine Optimization (SEO)</strong> — закрепить как Top Skill</li>
+    <li><strong>Python</strong></li>
+    <li><strong>Web Development</strong></li>
+    <li><strong>Artificial Intelligence (AI)</strong></li>
+    <li><strong>Technical SEO</strong></li>
+    <li><strong>SaaS</strong></li>
+    <li><strong>FastAPI</strong></li>
+    <li><strong>PostgreSQL</strong></li>
+    <li><strong>JavaScript</strong></li>
+    <li><strong>Startup Development</strong></li>
+  </ul>
+
+  <ol class="steps">
+    <li>Scroll к секции <strong>Skills</strong></li>
+    <li>Нажми <strong>"Add a new skill"</strong> для каждого нового</li>
+    <li>Для удаления: нажми на скилл > "..." > Delete</li>
+    <li>Перетащи SEO наверх (или нажми "Reorder") чтобы он был первым</li>
+  </ol>
+</div>
+
+<!-- ====== STEP 11 ====== -->
+<div class="section priority-medium" id="step11">
+  <div class="section-header">
+    <div class="section-number">11</div>
+    <div class="section-title">Education</div>
+    <span class="badge badge-medium">Medium</span>
+  </div>
+
+  <p>Moscow State University уже указан — хорошо. Проверь что всё актуально.</p>
+
+  <h3>Проверить / обновить:</h3>
+  <div class="copy-block"><strong>School:</strong> Lomonosov Moscow State University (МГУ)
+<strong>Degree:</strong> если есть — укажи (бакалавр/магистр)
+<strong>Field of study:</strong> укажи направление
+<strong>Activities:</strong> можно оставить пустым</div>
+
+  <p>Если учился в Бауманке тоже — добавь:</p>
+  <div class="copy-block"><strong>School:</strong> Bauman Moscow State Technical University (МГТУ им. Баумана)
+<strong>Degree / Field:</strong> заполни если помнишь</div>
+
+  <div class="tip">Образование в топовых вузах добавляет credibility, особенно для US-клиентов. Не удаляй.</div>
+</div>
+
+<!-- ====== STEP 12 ====== -->
+<div class="section priority-medium" id="step12">
+  <div class="section-header">
+    <div class="section-number">12</div>
+    <div class="section-title">Custom URL & Contact Info</div>
+    <span class="badge badge-medium">Medium</span>
+  </div>
+
+  <h3>Custom URL</h3>
+  <p>Текущий: <code>linkedin.com/in/sergei-krushinskikh</code> — ок, оставляем.</p>
+
+  <h3>Contact Info — обновить</h3>
+  <ol class="steps">
+    <li>Нажми <strong>"Contact info"</strong> под именем</li>
+    <li>Нажми карандаш (Edit)</li>
+    <li>Обнови:</li>
+  </ol>
+
+  <div class="copy-block"><strong>Website:</strong> https://sergeifounder.com (тип: Portfolio)
+<strong>Website 2:</strong> https://geoseo.today (тип: Other)
+<strong>Email:</strong> sergei@sergeifounder.com
+<strong>Phone:</strong> можно не указывать (используешь Telegram для связи)</div>
+
+  <h3>Location — обновить</h3>
+  <div class="old-new">
+    <div class="old">
+      <div class="old-label">Сейчас</div>
+      "Open to work: Moscow +2 more"
+    </div>
+    <div class="new">
+      <div class="new-label">Нужно</div>
+      Bali, Indonesia
+    </div>
+  </div>
+
+  <ol class="steps">
+    <li>В Edit profile > Location</li>
+    <li>Country: <strong>Indonesia</strong></li>
+    <li>City: <strong>Bali</strong> (или Denpasar)</li>
+  </ol>
+</div>
+
+<!-- ====== CONTENT PLAN ====== -->
+<h2 id="content">Контент-план: первые 7 постов для LinkedIn</h2>
+
+<p>После упаковки профиля нужно оживить ленту. Один пост в 2-3 дня. Вот темы:</p>
+
+<div class="section">
+  <h3>Пост 1 — Intro / Pivot story</h3>
+  <div class="copy-block"><strong>Тема:</strong> "I used to build no-code apps. Then I realized something..."
+<strong>Hook:</strong> Рассказ о переходе от Bubble к AI search optimization
+<strong>CTA:</strong> "What's the biggest shift you've made in your career?"
+<strong>Формат:</strong> текст, 800-1200 символов</div>
+</div>
+
+<div class="section">
+  <h3>Пост 2 — Case study (Ross Painting)</h3>
+  <div class="copy-block"><strong>Тема:</strong> "A painting company in San Diego got 6 leads from ChatGPT. Here's how."
+<strong>Hook:</strong> Конкретный результат + неожиданный канал
+<strong>Детали:</strong> 60 pages, 18 neighborhoods, AI search optimization
+<strong>CTA:</strong> "Is your business showing up when people ask ChatGPT for recommendations?"
+<strong>Формат:</strong> текст + скриншот (если есть)</div>
+</div>
+
+<div class="section">
+  <h3>Пост 3 — GEO explainer</h3>
+  <div class="copy-block"><strong>Тема:</strong> "SEO is not dead. But SEO alone is not enough anymore."
+<strong>Hook:</strong> 40% of searches now get AI-generated answers
+<strong>Объяснение:</strong> что такое GEO, почему бизнесам нужно оптимизировать для AI
+<strong>CTA:</strong> Link to geoseo.today
+<strong>Формат:</strong> текст, можно carousel</div>
+</div>
+
+<div class="section">
+  <h3>Пост 4 — Building in public</h3>
+  <div class="copy-block"><strong>Тема:</strong> "I built a 7,500-line audit tool in 2 weeks. Solo. Here's what I learned."
+<strong>Hook:</strong> Speed of building with AI tools
+<strong>Детали:</strong> tech stack, open source, what Claude/AI helped with
+<strong>CTA:</strong> "What are you building with AI?"
+<strong>Формат:</strong> текст</div>
+</div>
+
+<div class="section">
+  <h3>Пост 5 — Local SEO tip</h3>
+  <div class="copy-block"><strong>Тема:</strong> "If you're a local business, here are 3 things your competitors aren't doing"
+<strong>Hook:</strong> Конкретный actionable совет
+<strong>1.</strong> Neighborhood-specific landing pages
+<strong>2.</strong> Schema markup for local business
+<strong>3.</strong> Optimizing for AI search citations
+<strong>Формат:</strong> numbered list</div>
+</div>
+
+<div class="section">
+  <h3>Пост 6 — Bali founder life</h3>
+  <div class="copy-block"><strong>Тема:</strong> "Running a US-facing business from Bali. The real pros and cons."
+<strong>Hook:</strong> Timezone, culture, cost of living
+<strong>Личное:</strong> показать человеческую сторону
+<strong>Формат:</strong> текст + фото (опционально)</div>
+</div>
+
+<div class="section">
+  <h3>Пост 7 — Open source announcement</h3>
+  <div class="copy-block"><strong>Тема:</strong> "I just open-sourced my SEO audit tool. Here's why."
+<strong>Hook:</strong> Why free? Business model? What I learned.
+<strong>CTA:</strong> "Star it on GitHub / try it free"
+<strong>Формат:</strong> текст + link to repo</div>
+</div>
+
+<!-- ====== CHECKLIST ====== -->
+<h2 id="checklist">Финальный чеклист</h2>
+
+<div class="section">
+  <ul class="checklist">
+    <li>#OPENTOWORK рамка убрана</li>
+    <li>Имя: Sergei (не Sergel)</li>
+    <li>Headline обновлён (без Bubble, с GeoSEO)</li>
+    <li>Баннер заменён (без "Top 1% Bubble Developer")</li>
+    <li>Фото без зелёной рамки</li>
+    <li>About полностью переписан</li>
+    <li>Services добавлены и опубликованы</li>
+    <li>Experience: GeoSEO.today + IndoGig + Technical Partner</li>
+    <li>Experience: Bubble-позиции удалены/скрыты</li>
+    <li>Featured: sergeifounder.com + geoseo.today</li>
+    <li>Skills: SEO, Python, Web Dev (без Bubble)</li>
+    <li>Education: МГУ (+ МГТУ если было)</li>
+    <li>Contact Info: sergeifounder.com + email</li>
+    <li>Location: Bali, Indonesia (не Moscow)</li>
+    <li>Custom URL: linkedin.com/in/sergei-krushinskikh ✓</li>
+    <li>Первый пост опубликован</li>
+  </ul>
+</div>
+
+<div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+  Prepared by Katya (AI) for Sergei Krushinskikh — June 7, 2026<br>
+  <a href="/" style="color: var(--cyan);">sergeifounder.com</a>
+</div>
+
+</div>
+</body>
+</html>
